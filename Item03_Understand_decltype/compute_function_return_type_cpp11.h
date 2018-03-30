@@ -7,9 +7,9 @@
 
 void authenticateUser() {}
 
-template<typename Container, typename Index>  // works, but
-auto authAndAccess(Container& c, Index i)     // requires
-  -> decltype(c[i])                           // refinement
+template <typename Container, typename Index>  // works, but
+auto authAndAccess(Container& c, Index i)      // requires
+    -> decltype(c[i])                          // refinement
 {
   authenticateUser();
   return c[i];

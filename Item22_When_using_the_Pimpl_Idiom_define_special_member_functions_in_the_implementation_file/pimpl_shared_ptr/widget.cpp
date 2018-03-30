@@ -6,18 +6,18 @@
  *   be defined here.
  */
 
+#include "widget.h"
 #include <memory>
-#include <string>                  // in "widget.cpp"
+#include <string>  // in "widget.cpp"
 #include <vector>
 #include "gadget.h"
-#include "widget.h"
 
-struct Widget::Impl {              // as before
+struct Widget::Impl {  // as before
   std::string name;
   std::vector<double> data;
   Gadget g1, g2, g3;
 };
 
-Widget::Widget()                   // per Item 22 create
-: pImpl(std::make_shared<Impl>())  // std::unique_ptr
-{}                                 // via std::make_unique
+Widget::Widget()                       // per Item 22 create
+    : pImpl(std::make_shared<Impl>())  // std::unique_ptr
+{}                                     // via std::make_unique

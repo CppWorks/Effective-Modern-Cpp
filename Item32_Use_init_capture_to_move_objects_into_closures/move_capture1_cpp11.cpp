@@ -12,28 +12,23 @@
 #include <utility>
 #include <vector>
 
-int main()
-{
-  std::vector<double> data;                    // object to be moved
-                                               // into closure
-  
+int main() {
+  std::vector<double> data;  // object to be moved
+                             // into closure
+
   // ...                                       // populate data
-  
+
   {
-    auto func =
-      std::bind(                               // C++11 emulation
-        [](const std::vector<double>& data)    // of init capture
+    auto func = std::bind(                   // C++11 emulation
+        [](const std::vector<double>& data)  // of init capture
         { /* uses of data */ },
-        std::move(data)
-      );
+        std::move(data));
   }
 
   {
-    auto func =
-      std::bind(                               // C++11 emulation
+    auto func = std::bind(                     // C++11 emulation
         [](std::vector<double>& data) mutable  // of init capture
         { /* uses of data */ },                // for mutable lambda
-        std::move(data)
-      );
+        std::move(data));
   }
 }

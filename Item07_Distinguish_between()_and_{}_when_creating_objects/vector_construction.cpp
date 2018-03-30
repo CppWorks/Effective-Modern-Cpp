@@ -8,8 +8,7 @@
 
 #include <vector>
 
-int main()
-{
+int main() {
   std::vector<int> v1(10, 20);  // use non-std::initializer_list
                                 // ctor: create 10-element
                                 // std::vector, all elements have

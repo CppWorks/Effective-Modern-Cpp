@@ -5,8 +5,8 @@
  *   declaration.  That means that if you have legacy code that already uses the
  *   name override, you don't need to change it for C++11.
  */
-class Warning {     // potential legacy class from C++98
-public:
+class Warning {  // potential legacy class from C++98
+ public:
   void override();  // legal in both C++98 and C++11
                     // (with the same meaning)
 };

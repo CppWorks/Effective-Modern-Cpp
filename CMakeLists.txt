@@ -62,5 +62,15 @@ add_subdirectory(Item33_Use_decltype_on_autorr_parameters_to_std_forward_them)
 #add_subdirectory(Item34_Prefer_lambdas_to_std_bind)
 add_subdirectory(Item35_Prefer_task-based_programming_to_thread-based)
 add_subdirectory(Item36_Specify_std_launch_async_if_asynchronicity_is_essential)
-add_subdirectory(Item37_Make_std_threads_unjoinable_on_all_paths)
+# add_subdirectory(Item37_Make_std_threads_unjoinable_on_all_paths)
 add_subdirectory(Item38_Be_aware_of_varying_thread_handle_destructor_behavior)
+
+set_property(DIRECTORY APPEND PROPERTY ADDITIONAL_MAKE_CLEAN_FILES
+  "${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json")
+
+add_custom_target(compile_commands ALL)
+
+add_custom_command(
+  TARGET compile_commands POST_BUILD
+  COMMAND touch ${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json
+  COMMAND cp ${CMAKE_CURRENT_BINARY_DIR}/compile_commands.json ${CMAKE_SOURCE_DIR})

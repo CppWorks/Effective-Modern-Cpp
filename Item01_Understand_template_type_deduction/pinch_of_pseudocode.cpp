@@ -11,11 +11,10 @@
  *   e.g., const- or reference qualifiers.
  */
 
-template<typename T>
+template <typename T>
 void f(const T& param) {}  // ParamType is const T&
 
-int main()
-{
+int main() {
   int x = 0;
-  f(x);                    // call f with an int
+  f(x);  // call f with an int
 }

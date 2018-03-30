@@ -13,10 +13,10 @@
 #include "utils.h"
 
 #if __cplusplus == 201103L
-constexpr auto tenMillion = 10000000;         // see Item 15
-                                              // for constexpr
+constexpr auto tenMillion = 10000000;  // see Item 15
+                                       // for constexpr
 #elif __cplusplus == 201402L
-constexpr auto tenMillion = 10'000'000;       // C++14
+constexpr auto tenMillion = 10'000'000;  // C++14
 #endif
 
 bool doWork(std::function<bool(int)> filter,  // returns whether
@@ -25,30 +25,30 @@ bool doWork(std::function<bool(int)> filter,  // returns whether
                                               // Item 2 for
                                               // std::function
 
-  std::vector<int> goodVals;                  // values that
-                                              // satisfy filter
+  std::vector<int> goodVals;  // values that
+                              // satisfy filter
 
   std::thread t([&filter, maxVal, &goodVals]  // populate
                 {                             // goodVals
-                  for (auto i = 0; i <= maxVal; ++i)
-                   { if (filter(i)) goodVals.push_back(i); }
+                  for (auto i = 0; i <= maxVal; ++i) {
+                    if (filter(i)) goodVals.push_back(i);
+                  }
                 });
 
-  auto nh = t.native_handle();                // use t's native
+  auto nh = t.native_handle();  // use t's native
   // ...                                      // handle to set
-                                              // t's priority
+  // t's priority
 
   if (conditionsAreSatisfied()) {
-    t.join();                                 // let t finish
+    t.join();  // let t finish
     performComputation(goodVals);
-    return true;                              // computation was
-  }                                           // performed
+    return true;  // computation was
+  }               // performed
 
-  return false;                               // computation was
-}                                             // not performed
+  return false;  // computation was
+}  // not performed
 
-int main()
-{
-    std::function<bool(int)> filter = someFilter;
-    doWork(filter, 10);
+int main() {
+  std::function<bool(int)> filter = someFilter;
+  doWork(filter, 10);
 }

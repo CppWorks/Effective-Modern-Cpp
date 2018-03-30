@@ -15,31 +15,24 @@
 
 class Widget {};
 
-void processWidget(std::shared_ptr<Widget> spw, int priority)
-{
+void processWidget(std::shared_ptr<Widget> spw, int priority) {
   std::cout << "Processing Widget... done." << std::endl;
 }
 
-int computePriority()
-{
+int computePriority() {
   std::cout << "Computing priority... done." << std::endl;
 }
 
-
-int main()
-{
-
+int main() {
   // Reason 1: no need to type the type twice.
-  
-  auto upw1(std::make_unique<Widget>());       // with make func
-  
-  std::unique_ptr<Widget> upw2(new Widget());  // without make func
-  
-  
-  auto spw1(std::make_shared<Widget>());       // with make func
-  
-  std::shared_ptr<Widget> spw2(new Widget());  // without make func
 
+  auto upw1(std::make_unique<Widget>());  // with make func
+
+  std::unique_ptr<Widget> upw2(new Widget());  // without make func
+
+  auto spw1(std::make_shared<Widget>());  // with make func
+
+  std::shared_ptr<Widget> spw2(new Widget());  // without make func
 
   // Reason 2: using the make_* versions is more exception safe.
 
@@ -47,16 +40,10 @@ int main()
                 computePriority());                   // resource
                                                       // leak!
 
-  processWidget(std::make_shared<Widget>(),           // no potential
-                computePriority());                   // resource leak
-
+  processWidget(std::make_shared<Widget>(),  // no potential
+                computePriority());          // resource leak
 
   // Reason 3: a special feature of make_shared is improved efficiency.
-  {
-    std::shared_ptr<Widget> spw(new Widget);
-  }
-  {
-    auto spw = std::make_shared<Widget>();
-  }
-
+  { std::shared_ptr<Widget> spw(new Widget); }
+  { auto spw = std::make_shared<Widget>(); }
 }

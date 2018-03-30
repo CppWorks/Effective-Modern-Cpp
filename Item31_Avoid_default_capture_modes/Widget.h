@@ -2,13 +2,13 @@
 #define WIDGET_H
 
 class Widget {
-public:
+ public:
   // ...                     // ctors, etc.
 
-  void addFilter() const;    // add an entry to filters
+  void addFilter() const;  // add an entry to filters
 
-private:
-  int divisor;               // used in Widget's filter
+ private:
+  int divisor;  // used in Widget's filter
 };
 
 #endif /* WIDGET_H */

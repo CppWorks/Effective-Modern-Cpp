@@ -9,8 +9,8 @@
 #include <type_traits>
 using std::remove_reference_t;
 
-template<typename T>                          // C++14 only; still
-auto move(T&& param)                          // in namespace std
+template <typename T>  // C++14 only; still
+auto move(T&& param)   // in namespace std
 {
   using ReturnType = remove_reference_t<T>&&;
   return static_cast<ReturnType>(param);

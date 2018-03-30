@@ -9,7 +9,4 @@
 
 #include "reference_collapsing_contexts02.h"
 
-int main()
-{
-    Widget<int&> w;
-}
+int main() { Widget<int&> w; }

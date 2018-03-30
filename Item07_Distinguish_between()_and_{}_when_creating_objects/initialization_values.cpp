@@ -14,28 +14,25 @@
 #include <vector>
 
 class Widget {
-public:
-  Widget() {};
-  Widget(int x) {};
+ public:
+  Widget(){};
+  Widget(int x){};
 
-  Widget(int i, bool b) {};    // ctors not declaring
-  Widget(int i, double d) {};  // std::initializer_list params
+  Widget(int i, bool b){};    // ctors not declaring
+  Widget(int i, double d){};  // std::initializer_list params
 
-// Default initialization values for non-static data members.
-private:
+  // Default initialization values for non-static data members.
+ private:
   int x{0};   // fine, x's default value is 0
   int y = 0;  // also fine
-  //int z(0);   // error!
-
+  // int z(0);   // error!
 };
 
-int main()
-{
-
+int main() {
   {
-    int x(0);     // initializer is in parentheses
-    int y = 0;    // initializer follows "="
-    int z {0};    // initializer is in braces
+    int x(0);   // initializer is in parentheses
+    int y = 0;  // initializer follows "="
+    int z{0};   // initializer is in braces
   }
 
   {
@@ -56,46 +53,43 @@ int main()
   // Uncopyable objects (e.g. std::atomics) may be initialized
   // using braces or parentheses, but not using "=":
   {
-    std::atomic<int> ai1{0};   // fine
-    std::atomic<int> ai2(0);   // fine
-    //std::atomic<int> ai3 = 0;  // error!
+    std::atomic<int> ai1{0};  // fine
+    std::atomic<int> ai2(0);  // fine
+    // std::atomic<int> ai3 = 0;  // error!
   }
 
   // Implicit narrowing conversions:
   double x, y, z;
-  //int sum1{x + y + z};  // error! sum of doubles may
-                          // not be expressible as int
+  // int sum1{x + y + z};  // error! sum of doubles may
+  // not be expressible as int
 
   // Initialization using parentheses and "=" doesn't check
   // for narrowing conversions, because that would break too
   // much legacy code:
   {
-    int sum2 = x + y + z;    // okay (value of expression
-                             // truncated to an int)
-    int sum3(x + y + z);     // ditto
+    int sum2 = x + y + z;  // okay (value of expression
+                           // truncated to an int)
+    int sum3(x + y + z);   // ditto
   }
-
 
   {
     Widget w1(10);  // call Widget ctor with argument 10
-    //Widget w2();   // most vexing parse! declares a function
-                     // named w2 that returns a Widget!
+    // Widget w2();   // most vexing parse! declares a function
+    // named w2 that returns a Widget!
 
     void f(const Widget& w = Widget());  // w's default value is a
                                          // default-constructed
                                          // Widget
   }
 
-
   {
-    Widget w3{};       // calls Widget ctor with no args
+    Widget w3{};  // calls Widget ctor with no args
   }
   {
     void f(const Widget& w = Widget{});  // as before, w's default
                                          // value is a default-
                                          // constructed Widget
   }
-
 
   {
     auto v1 = -1;    // -1's type is int, and so is v1's
@@ -114,5 +108,4 @@ int main()
     Widget w3(10, 5.0);   // calls second ctor
     Widget w4{10, 5.0};   // also calls second ctor
   }
-
 }

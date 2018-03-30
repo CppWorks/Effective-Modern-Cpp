@@ -11,48 +11,41 @@
 
 #include <utility>
 
-//void f(int (*pf)(int));   // pf = "processing function"
-void f(int pf(int)) {}      // declares same f as above
-
+// void f(int (*pf)(int));   // pf = "processing function"
+void f(int pf(int)) {}  // declares same f as above
 
 int processVal(int value) { return 1; }
 int processVal(int value, int priority) { return 1; }
 
-
-template<typename T>
+template <typename T>
 T workOnVal(T param)  // template for processing values
 {
   T x;
   return x;
 }
 
-
-template<typename T>
-void fwd(T&& param)             // accept any argument
+template <typename T>
+void fwd(T&& param)  // accept any argument
 {
-  f(std::forward<T>(param));    // forward it to f
+  f(std::forward<T>(param));  // forward it to f
 }
 
+int main() {
+  f(processVal);  // fine
 
-int main()
-{
-  f(processVal);        // fine
+  // fwd(processVal);    // error! which processVal?
 
-  //fwd(processVal);    // error! which processVal?
+  // fwd(workOnVal);     // error! which workOnVal
+  // instantiation?
 
+  using ProcessFuncType =  // make typedef;
+      int (*)(int);        // see Item 9
 
-  //fwd(workOnVal);     // error! which workOnVal
-                        // instantiation?
+  ProcessFuncType processValPtr = processVal;  // specify needed
+                                               // signature for
+                                               // processVal
 
-
-  using ProcessFuncType =                        // make typedef;
-    int (*)(int);                                // see Item 9
-
-  ProcessFuncType processValPtr = processVal;    // specify needed
-                                                 // signature for
-                                                 // processVal
-
-  fwd(processValPtr);                            // fine
+  fwd(processValPtr);  // fine
 
   fwd(static_cast<ProcessFuncType>(workOnVal));  // also fine
 }

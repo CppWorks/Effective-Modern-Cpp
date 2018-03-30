@@ -9,25 +9,24 @@
 #include <vector>
 
 class Polynomial {
-public:
+ public:
   using RootsType = std::vector<double>;
 
-  RootsType roots() const
-  {
+  RootsType roots() const {
     std::lock_guard<std::mutex> g(m);  // lock mutex
 
-    if (!rootsAreValid) {              // if cache not valid
+    if (!rootsAreValid) {  // if cache not valid
 
       // ...                           // compute roots here
 
       rootsAreValid = true;
-    }                                  // release mutex
+    }  // release mutex
 
     return rootVals;
   }
 
-private:
+ private:
   mutable std::mutex m;
-  mutable bool rootsAreValid { false };
-  mutable RootsType rootVals {};
+  mutable bool rootsAreValid{false};
+  mutable RootsType rootVals{};
 };

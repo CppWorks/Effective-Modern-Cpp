@@ -1,3 +1,3 @@
 #include "utils.h"
 
-FilterContainer filters;            // filtering funcs
+FilterContainer filters;  // filtering funcs

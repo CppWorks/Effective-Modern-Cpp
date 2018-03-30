@@ -16,13 +16,12 @@
 class SomeDataStructure {};
 
 class Widget {
-public:
-    Widget(Widget&& rhs)               // rhs is rvalue reference
-    : name(std::move(rhs.name)),
-      p(std::move(rhs.p))
-      { /* ... */ }
+ public:
+  Widget(Widget&& rhs)  // rhs is rvalue reference
+      : name(std::move(rhs.name)), p(std::move(rhs.p)) { /* ... */
+  }
 
-private:
-    std::string name;
-    std::shared_ptr<SomeDataStructure> p;
+ private:
+  std::string name;
+  std::shared_ptr<SomeDataStructure> p;
 };

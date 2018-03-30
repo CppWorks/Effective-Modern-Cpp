@@ -5,26 +5,20 @@
  *   involved.
  */
 
-int* findRecord() {
-  return nullptr;
-}
+int* findRecord() { return nullptr; }
 
-int main()
-{
-
+int main() {
   {
-    auto result = findRecord( /* arguments */ );
-    
+    auto result = findRecord(/* arguments */);
+
     if (result == 0) {
     }
   }
 
-
   {
-    auto result = findRecord( /* arguments */ );
+    auto result = findRecord(/* arguments */);
 
     if (result == nullptr) {
     }
   }
-
 }

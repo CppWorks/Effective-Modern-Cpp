@@ -16,34 +16,37 @@
 #include <iostream>
 #include <string>
 
-std::string getWidgetName()       // factory function
+std::string getWidgetName()  // factory function
 {
-    return std::string("SomeWidgetName");
+  return std::string("SomeWidgetName");
 }
 
 class Widget {
-
-public:
+ public:
   void setName(const std::string& newName)  // set from
-  { name = newName; }                       // const lvalue
+  {
+    name = newName;
+  }  // const lvalue
 
-  void setName(std::string&& newName)       // set from
-  { name = std::move(newName); }            // rvalue
+  void setName(std::string&& newName)  // set from
+  {
+    name = std::move(newName);
+  }  // rvalue
 
-private:
+ private:
   std::string name;
-  //std::shared_ptr<SomeDataStructure> p;  // REMARK: this is not really necessary for this example.
+  // std::shared_ptr<SomeDataStructure> p;  // REMARK: this is not really
+  // necessary for this example.
 };
 
-int main()
-{
-    Widget w;
+int main() {
+  Widget w;
 
-    auto n = getWidgetName();         // n is local variable
+  auto n = getWidgetName();  // n is local variable
 
-    w.setName(n);                     // moves n into w!
+  w.setName(n);  // moves n into w!
 
-    std::cout << n << std::endl;      // n's value now unknown
+  std::cout << n << std::endl;  // n's value now unknown
 
-    w.setName("Adela Novak");
+  w.setName("Adela Novak");
 }

@@ -13,9 +13,9 @@
 using std::move;
 using std::remove_reference;
 
-template<typename T>                              // in
-T&& forward(typename                              // namespace
-              remove_reference<T>::type& param)   // std
+template <typename T>                          // in
+T&& forward(typename                           // namespace
+            remove_reference<T>::type& param)  // std
 {
   return static_cast<T&&>(param);
 }

@@ -8,10 +8,9 @@
 
 void someFunc(int x) {}
 
-template<typename T>
-void f(T&& fParam)
-{
+template <typename T>
+void f(T&& fParam) {
   // ...                              // do some work
 
   someFunc(std::forward<T>(fParam));  // forward fParam to
-}                                     // someFunc
+}  // someFunc

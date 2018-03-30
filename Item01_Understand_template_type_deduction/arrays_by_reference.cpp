@@ -11,13 +11,12 @@
  *
  */
 
-template<typename T>
+template <typename T>
 void f(T& param) {}  // template with by-reference parameter
 
-int main()
-{
-    const char name[] = "J. P. Briggs";  // name's type is
-                                         // const char[13]
+int main() {
+  const char name[] = "J. P. Briggs";  // name's type is
+                                       // const char[13]
 
-    f(name);                   // pass array to f
+  f(name);  // pass array to f
 }

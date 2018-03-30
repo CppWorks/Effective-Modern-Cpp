@@ -5,17 +5,17 @@
  *   You can't do this using private member functions.
  */
 
-template<typename T>
-void processPointer(T* ptr) {};
+template <typename T>
+void processPointer(T* ptr){};
 
-template<>
+template <>
 void processPointer<void>(void*) = delete;
 
-template<>
+template <>
 void processPointer<char>(char*) = delete;
 
-template<>
+template <>
 void processPointer<const void>(const void*) = delete;
 
-template<>
+template <>
 void processPointer<const char>(const char*) = delete;

@@ -14,23 +14,20 @@
 
 Polynomial p;
 
-void func1()
-{
+void func1() {
   /* Thread 1 */
   auto rootsOfP = p.roots();
 }
 
-void func2()
-{
+void func2() {
   /* Thread 2 */
   auto valsGivingZero = p.roots();
 }
 
-int main()
-{
+int main() {
   std::thread t1(func1);
   std::thread t2(func2);
- 
+
   t1.join();
   t2.join();
 }

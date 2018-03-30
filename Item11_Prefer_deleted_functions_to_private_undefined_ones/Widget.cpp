@@ -8,21 +8,18 @@
  */
 
 class Widget {
-public:
-
+ public:
   // ...
 
-  template<typename T>
-  void processPointer(T* ptr)
-  { }
+  template <typename T>
+  void processPointer(T* ptr) {}
 
-private:
+ private:
   // template<>                                    // error!
   // void processPointer<void>(void*);
-
 };
 
-template<>                                         // still
-void Widget::processPointer<void>(void*) = delete; // public,
-                                                   // but
-                                                   // deleted
+template <>                                         // still
+void Widget::processPointer<void>(void*) = delete;  // public,
+                                                    // but
+                                                    // deleted

@@ -8,22 +8,21 @@
 #include <vector>
 
 class Polynomial {
-public:
+ public:
   using RootsType = std::vector<double>;
 
-  RootsType roots() const
-  {
-    if (!rootsAreValid) {        // if cache not valid
+  RootsType roots() const {
+    if (!rootsAreValid) {  // if cache not valid
 
       // ...                     // compute roots
-                                 // store them in rootVals
+      // store them in rootVals
       rootsAreValid = true;
     }
 
     return rootVals;
   }
 
-private:
-  mutable bool rootsAreValid{ false };  // see Item 7 for into
-  mutable RootsType rootVals{};         // on initializers
+ private:
+  mutable bool rootsAreValid{false};  // see Item 7 for into
+  mutable RootsType rootVals{};       // on initializers
 };

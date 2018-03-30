@@ -13,15 +13,14 @@
 #include <chrono>
 #include <utility>
 
-template<typename T>                       // text is
-void setSignText(T&& text)                 // univ. reference
+template <typename T>       // text is
+void setSignText(T&& text)  // univ. reference
 {
-  sign.setText(text);                      // use text, but
-                                           // don't modify it
+  sign.setText(text);  // use text, but
+                       // don't modify it
 
-  auto now =                               // get current time
-    std::chrono::system_clock::now();
+  auto now =  // get current time
+      std::chrono::system_clock::now();
 
-  signHistory.add(now,
-                  std::forward<T>(text));  // conditionally cast
-}                                          // text to rvalue
+  signHistory.add(now, std::forward<T>(text));  // conditionally cast
+}  // text to rvalue

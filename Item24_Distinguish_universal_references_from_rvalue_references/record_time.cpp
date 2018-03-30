@@ -7,12 +7,11 @@
 
 #include <utility>
 
-auto timeFuncInvocation =
-  [](auto&& func, auto&&... params)               // C++14
-  {
-    // start timer;
-    std::forward<decltype(func)>(func)(           // invoke func
-      std::forward<decltype(params)>(params)...   // on params
+auto timeFuncInvocation = [](auto&& func, auto&&... params)  // C++14
+{
+  // start timer;
+  std::forward<decltype(func)>(func)(            // invoke func
+      std::forward<decltype(params)>(params)...  // on params
       );
-    // stop timer and record elapsed time;
-  };
+  // stop timer and record elapsed time;
+};

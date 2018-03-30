@@ -9,8 +9,7 @@
 #include <iostream>
 
 class Widget {
-public:
-
+ public:
   Widget(int i, bool b) {  // as before
     std::cout << "Widget(int, bool)" << std::endl;
   };
@@ -25,11 +24,9 @@ public:
   };
 
   // ...                    // no implicit
-                            // conversion funcs
-
+  // conversion funcs
 };
 
-int main()
-{
-  //Widget w{10, 5.0};   // error! requires narrowing conversions
+int main() {
+  // Widget w{10, 5.0};   // error! requires narrowing conversions
 }

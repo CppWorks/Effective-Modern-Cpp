@@ -8,15 +8,15 @@
 #include <list>
 #include <memory>
 
-template<typename T>
+template <typename T>
 class MyAlloc : public std::allocator<T> {};
 
-template<typename T>
+template <typename T>
 using MyAllocList = std::list<T, MyAlloc<T>>;  // as before
 
-template<typename T>
+template <typename T>
 class Widget {
-private:
-  MyAllocList<T> list;                         // no "typename",
+ private:
+  MyAllocList<T> list;  // no "typename",
   // ...                                       // no "::type"
 };

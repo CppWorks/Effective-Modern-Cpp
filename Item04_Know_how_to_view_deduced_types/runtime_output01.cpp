@@ -14,8 +14,7 @@ const int theAnswer = 42;
 auto x = theAnswer;
 auto y = &theAnswer;
 
-int main()
-{
-    std::cout << typeid(x).name() << '\n';   // display types for
-    std::cout << typeid(y).name() << '\n';   // x and y
+int main() {
+  std::cout << typeid(x).name() << '\n';  // display types for
+  std::cout << typeid(y).name() << '\n';  // x and y
 }

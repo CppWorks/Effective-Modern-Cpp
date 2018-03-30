@@ -7,13 +7,10 @@
 #include <algorithm>
 #include <vector>
 
-int main()
-{
+int main() {
+  std::vector<int> values;  // as before
 
-  std::vector<int> values;                            // as before
-
-  auto it =                                           // use cbegin
-    std::find(values.cbegin(), values.cend(), 1983);  // and cend
+  auto it =                                             // use cbegin
+      std::find(values.cbegin(), values.cend(), 1983);  // and cend
   values.insert(it, 1998);
-
 }

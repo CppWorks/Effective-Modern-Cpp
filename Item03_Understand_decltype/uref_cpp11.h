@@ -9,11 +9,10 @@
 
 void authenticateUser() {}
 
-template<typename Container, typename Index>            // final
-auto                                                    // C++11
-authAndAccess(Container&& c, Index i)                   // version 
--> decltype(std::forward<Container>(c)[i])
-{
+template <typename Container, typename Index>  // final
+auto                                           // C++11
+    authAndAccess(Container&& c, Index i)      // version
+    -> decltype(std::forward<Container>(c)[i]) {
   authenticateUser();
   return std::forward<Container>(c)[i];
 }

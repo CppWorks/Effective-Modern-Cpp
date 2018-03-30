@@ -9,26 +9,21 @@
 #include <string>
 #include <tuple>
 
-using UserInfo =               // type alias; see Item 9
-  std::tuple<std::string,      // name
-             std::string,      // email
-             std::size_t> ;    // reputation
+using UserInfo =              // type alias; see Item 9
+    std::tuple<std::string,   // name
+               std::string,   // email
+               std::size_t>;  // reputation
 
-template<typename E>
-constexpr typename std::underlying_type<E>::type
-  toUType(E enumerator) noexcept
-{
-  return
-    static_cast<typename
-                std::underlying_type<E>::type>(enumerator);
+template <typename E>
+constexpr typename std::underlying_type<E>::type toUType(
+    E enumerator) noexcept {
+  return static_cast<typename std::underlying_type<E>::type>(enumerator);
 }
 
-int main()
-{
-
+int main() {
   enum class UserInfoFields { uiName, uiEmail, uiReputation };
 
-  UserInfo uInfo;                       // as before
+  UserInfo uInfo;  // as before
   // ...
   auto val = std::get<toUType(UserInfoFields::uiEmail)>(uInfo);
 }

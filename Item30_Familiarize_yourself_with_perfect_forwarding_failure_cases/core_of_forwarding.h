@@ -11,14 +11,14 @@
 
 #include <utility>
 
-template<typename T>
-void fwd(T&& param)             // accept any argument
+template <typename T>
+void fwd(T&& param)  // accept any argument
 {
-  f(std::forward<T>(param));    // forward it to f
+  f(std::forward<T>(param));  // forward it to f
 }
 
-template<typename... Ts>
-void fwd(Ts&&... param)             // accept any arguments
+template <typename... Ts>
+void fwd(Ts&&... param)  // accept any arguments
 {
-  f(std::forward<Ts>(param)...);    // forward them to f
+  f(std::forward<Ts>(param)...);  // forward them to f
 }

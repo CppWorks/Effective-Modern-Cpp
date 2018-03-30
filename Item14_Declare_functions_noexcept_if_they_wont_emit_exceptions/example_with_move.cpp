@@ -8,17 +8,16 @@
 
 class Widget {};
 
-int main()
-{
+int main() {
   std::vector<Widget> vw;
-  
+
   // ...
-  
+
   Widget w;
-  
+
   // ...             // work with w
 
-  vw.push_back(w);   // add w to vw
+  vw.push_back(w);  // add w to vw
 
   // ...
 }

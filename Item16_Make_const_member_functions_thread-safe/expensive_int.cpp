@@ -2,8 +2,7 @@
 //#include "Widget2.h"
 //#include "Widget3.h"
 
-int main()
-{
+int main() {
   Widget w;
   w.magicValue();
 }

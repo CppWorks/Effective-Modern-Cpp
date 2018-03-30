@@ -10,12 +10,10 @@
 #include <string>
 
 class Widget {
-public:
-  Widget(Widget&& rhs)
-  : s(std::move(rhs.s))
-  { ++moveCtorCalls; }
+ public:
+  Widget(Widget&& rhs) : s(std::move(rhs.s)) { ++moveCtorCalls; }
 
-private:
+ private:
   static std::size_t moveCtorCalls;
   std::string s;
 };

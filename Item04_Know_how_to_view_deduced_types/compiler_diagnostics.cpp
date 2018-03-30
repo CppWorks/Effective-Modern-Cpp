@@ -7,13 +7,13 @@
  *   it.
  */
 
-template<typename T>  // declaration only for TD;
-class TD;             // TD = "Type Displayer"
+template <typename T>  // declaration only for TD;
+class TD;              // TD = "Type Displayer"
 
 const int theAnswer = 42;
 
 auto x = theAnswer;
 auto y = &theAnswer;
 
-//TD<decltype(x)> xType;  // elicit errors containing
-//TD<decltype(y)> yType;  // x's and y's types
+// TD<decltype(x)> xType;  // elicit errors containing
+// TD<decltype(y)> yType;  // x's and y's types

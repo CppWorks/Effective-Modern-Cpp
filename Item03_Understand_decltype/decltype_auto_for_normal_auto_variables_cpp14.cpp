@@ -12,8 +12,8 @@ Widget w;
 
 const Widget& cw = w;
 
-auto myWidget1 = cw;            // auto type deduction:
-                                // myWidget1's type is Widget
+auto myWidget1 = cw;  // auto type deduction:
+                      // myWidget1's type is Widget
 
 decltype(auto) myWidget2 = cw;  // decltype type deduction:
                                 // myWidget2's type is

@@ -7,12 +7,9 @@
 
 #include <array>
 
-int readFromDB(const char* s)
-{
-  return 1;
-}
+int readFromDB(const char* s) { return 1; }
 
-constexpr int pow(int base, int exp)          // C++14
+constexpr int pow(int base, int exp)  // C++14
 {
   auto result = 1;
   for (int i = 0; i < exp; ++i) result *= base;
@@ -20,8 +17,7 @@ constexpr int pow(int base, int exp)          // C++14
   return result;
 }
 
-int main()
-{
+int main() {
   // compile-time-compute the size of a std::array:
   constexpr auto numConds = 5;                // # of conditions
   std::array<int, pow(3, numConds)> results;  // results has
@@ -29,9 +25,9 @@ int main()
                                               // elements
 
   // runtime context:
-  auto base = readFromDB("base");             // get these values
-  auto exp = readFromDB("exponent");          // at runtime
+  auto base = readFromDB("base");     // get these values
+  auto exp = readFromDB("exponent");  // at runtime
 
-  auto baseToExp = pow(base, exp);            // call pow function
-                                              // at runtime
+  auto baseToExp = pow(base, exp);  // call pow function
+                                    // at runtime
 }

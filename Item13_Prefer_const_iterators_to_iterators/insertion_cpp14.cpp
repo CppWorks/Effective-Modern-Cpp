@@ -11,12 +11,12 @@
 #include <iterator>
 #include <vector>
 
-template<typename C, typename V>
-void findAndInsert(C& container,         // in container, find
-                   const V& targetVal,   // first occurrence
-                   const V& insertVal)   // of targetVal, then
-{                                        // insert insertVal
-  using std::cbegin;                     // there
+template <typename C, typename V>
+void findAndInsert(C& container,        // in container, find
+                   const V& targetVal,  // first occurrence
+                   const V& insertVal)  // of targetVal, then
+{                                       // insert insertVal
+  using std::cbegin;                    // there
   using std::cend;
 
   auto it = std::find(cbegin(container),  // non-member cbegin
@@ -26,10 +26,8 @@ void findAndInsert(C& container,         // in container, find
   container.insert(it, insertVal);
 }
 
-int main()
-{
-
-  std::vector<int> values;                            // as before
+int main() {
+  std::vector<int> values;  // as before
 
   findAndInsert(values, 1983, 1998);
 }

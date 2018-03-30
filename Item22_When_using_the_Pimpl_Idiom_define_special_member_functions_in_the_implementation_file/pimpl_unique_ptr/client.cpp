@@ -1,6 +1,5 @@
 #include "widget.h"
 
-int main()
-{
+int main() {
   Widget w;  // error
 }

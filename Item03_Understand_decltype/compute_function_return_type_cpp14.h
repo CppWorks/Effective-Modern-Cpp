@@ -7,10 +7,10 @@
  *   function's return type from the function's implementation.
  */
 
-template<typename Container, typename Index>  // C++14 only, and
-auto authAndAccess(Container& c, Index i)     // not quite
-                                              // correct
+template <typename Container, typename Index>  // C++14 only, and
+auto authAndAccess(Container& c, Index i)      // not quite
+                                               // correct
 {
   authenticateUser();
-  return c[i];              // return type deduced from c[i]
+  return c[i];  // return type deduced from c[i]
 }

@@ -1,9 +1,9 @@
 #ifndef ENCODING_MECHANISM02_H
 #define ENCODING_MECHANISM02_H
 
-template<typename T>
+template <typename T>
 class Widget {
-public:
+ public:
   typedef T&& RvalueRefTot;
 };
 

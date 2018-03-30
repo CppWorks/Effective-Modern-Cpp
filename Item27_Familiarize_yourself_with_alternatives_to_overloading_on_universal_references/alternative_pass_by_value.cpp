@@ -9,20 +9,18 @@
 #include <string>
 #include <utility>
 
-std::string nameFromIdx(int idx) {
-  return std::string("Bart");
-}
+std::string nameFromIdx(int idx) { return std::string("Bart"); }
 
 class Person {
-public:
+ public:
   explicit Person(std::string n)  // replaces T&& ctor; see
-  : name(std::move(n)) {}         // Item 41 for use of std::move
+      : name(std::move(n)) {}     // Item 41 for use of std::move
 
-  explicit Person(int idx)        // as before
-  : name(nameFromIdx(idx)) {}
+  explicit Person(int idx)  // as before
+      : name(nameFromIdx(idx)) {}
 
   // ...
 
-private:
+ private:
   std::string name;
 };

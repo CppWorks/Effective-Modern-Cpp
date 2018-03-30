@@ -11,13 +11,13 @@
 #include <vector>
 #include "gadget.h"
 
-class Widget {              // in header widget.h
-public:
+class Widget {  // in header widget.h
+ public:
   Widget();
   // ...
 
-private:
+ private:
   std::string name;
   std::vector<double> data;
-  Gadget g1, g2, g3;        // Gadget is some user-
-};                          // defined type
+  Gadget g1, g2, g3;  // Gadget is some user-
+};                    // defined type

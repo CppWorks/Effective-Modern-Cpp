@@ -5,20 +5,15 @@
  *   function implementations and their exception specifications.
  */
 
-void setup() {};
-void cleanup() {};
+void setup(){};
+void cleanup(){};
 
-void doWork() noexcept
-{
-  setup();     // set up work to be done
+void doWork() noexcept {
+  setup();  // set up work to be done
 
   // ...       // do the actual work
 
-  cleanup();   // perform cleanup actions
+  cleanup();  // perform cleanup actions
 }
 
-
-int main()
-{
-  doWork();
-}
+int main() { doWork(); }

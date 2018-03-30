@@ -8,13 +8,16 @@
 #include <iostream>
 
 class Widget {
-public:
-  Widget(int i, bool b) { std::cout << "Widget(int, bool)" << std::endl; };      // ctors not declaring
-  Widget(int i, double d) { std::cout << "Widget(int, double)" << std::endl; };  // std::initializer_list params
+ public:
+  Widget(int i, bool b) {
+    std::cout << "Widget(int, bool)" << std::endl;
+  };  // ctors not declaring
+  Widget(int i, double d) {
+    std::cout << "Widget(int, double)" << std::endl;
+  };  // std::initializer_list params
 };
 
-int main()
-{
+int main() {
   // In constructor calls, parentheses and braces have the same meaning as
   // long as std::initializer_list parameters are not involved:
   Widget w1(10, true);  // calls first ctor

@@ -9,18 +9,13 @@
 #include <future>
 #include <iostream>
 
-void f()
-{
-    std::cout << "f()" << std::endl;
-}
+void f() { std::cout << "f()" << std::endl; }
 
+int main() {
+  auto fut = std::async(std::launch::async, f);  // launch f
+                                                 // asynchronously
 
-int main()
-{
-    auto fut = std::async(std::launch::async, f);  // launch f
-                                                   // asynchronously
+  fut.get();
 
-    fut.get();
-
-    return 0;
+  return 0;
 }

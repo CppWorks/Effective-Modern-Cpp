@@ -8,21 +8,16 @@ bool needBond = false;
 bool needRealEstate = false;
 
 class Investment {
-public:
-
-                                // essential
-  virtual ~Investment() {}      // design
-                                // component
-  
+ public:
+  // essential
+  virtual ~Investment() {}  // design
+                            // component
 };
 
-class Stock:
-  public Investment { };
+class Stock : public Investment {};
 
-class Bond:
-  public Investment { };
+class Bond : public Investment {};
 
-class RealEstate:
-  public Investment { };
+class RealEstate : public Investment {};
 
 #endif  // INVESTMENT_H

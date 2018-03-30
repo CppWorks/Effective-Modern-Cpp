@@ -2,14 +2,13 @@
 #include <vector>
 
 class Widget : public std::enable_shared_from_this<Widget> {
-public:
+ public:
   void process();
 };
 
 std::vector<std::shared_ptr<Widget>> processedWidgets;
 
-void Widget::process()
-{
+void Widget::process() {
   // as before, process the Widget
   // ...
 

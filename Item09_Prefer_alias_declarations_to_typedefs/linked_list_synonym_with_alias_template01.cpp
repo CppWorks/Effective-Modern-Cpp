@@ -9,12 +9,12 @@
 
 class Widget {};
 
-template<typename T>
+template <typename T>
 class MyAlloc : public std::allocator<T> {};
 
-template<typename T>                           // MyAllocList<T>
+template <typename T>                          // MyAllocList<T>
 using MyAllocList = std::list<T, MyAlloc<T>>;  // is synonym for
                                                // std::list<T,
                                                //   MyAlloc<T>>
 
-MyAllocList<Widget> lw;                        // client code
+MyAllocList<Widget> lw;  // client code

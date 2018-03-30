@@ -7,12 +7,12 @@
  *   the headers involved with the incomplete types change.
  */
 
-class Widget {        // still in header "widget.h"
-public:
+class Widget {  // still in header "widget.h"
+ public:
   Widget();
-  ~Widget();          // dtor is needed - see below
+  ~Widget();  // dtor is needed - see below
 
-private:
-  struct Impl;        // declare implementation struct
-  Impl *pImpl;        // and pointer to it
+ private:
+  struct Impl;  // declare implementation struct
+  Impl *pImpl;  // and pointer to it
 };

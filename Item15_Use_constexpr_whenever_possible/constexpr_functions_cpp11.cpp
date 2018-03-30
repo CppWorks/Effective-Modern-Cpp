@@ -12,19 +12,16 @@
 
 #include <array>
 
-int readFromDB(const char* s)
-{
-  return 1;
-}
+int readFromDB(const char* s) { return 1; }
 
-constexpr                                     // pow's a constexpr func
-int pow(int base, int exp) noexcept           // that never throws
+constexpr  // pow's a constexpr func
+    int
+    pow(int base, int exp) noexcept  // that never throws
 {
   return (exp == 0 ? 1 : base * pow(base, exp - 1));
 }
 
-int main()
-{
+int main() {
   // compile-time-compute the size of a std::array:
   constexpr auto numConds = 5;                // # of conditions
   std::array<int, pow(3, numConds)> results;  // results has
@@ -32,9 +29,9 @@ int main()
                                               // elements
 
   // runtime context:
-  auto base = readFromDB("base");             // get these values
-  auto exp = readFromDB("exponent");          // at runtime
+  auto base = readFromDB("base");     // get these values
+  auto exp = readFromDB("exponent");  // at runtime
 
-  auto baseToExp = pow(base, exp);            // call pow function
-                                              // at runtime
+  auto baseToExp = pow(base, exp);  // call pow function
+                                    // at runtime
 }

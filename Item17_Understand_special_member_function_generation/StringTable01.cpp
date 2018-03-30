@@ -10,11 +10,11 @@
 #include <string>
 
 class StringTable {
-public:
+ public:
   StringTable() {}
   // ...                 // functions for insertion, erasure, lookup,
-                         // etc., but no copy/move/dtor functionality
+  // etc., but no copy/move/dtor functionality
 
-private:
+ private:
   std::map<int, std::string> values;
 };

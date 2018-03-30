@@ -15,14 +15,13 @@ void doSomeWork(Ts&&... params)
   // create local T object from params...
 
   // Method 1
-  T localObject(std::forward<Ts>(params)...);    // using parens
+  T localObject(std::forward<Ts>(params)...);  // using parens
 
   // Method 2
-  //T localObject{std::forward<Ts>(params)...};  // using braces
+  // T localObject{std::forward<Ts>(params)...};  // using braces
 }
 
-int main()
-{
+int main() {
   std::vector<int> v;
 
   doSomeWork<std::vector<int>>(10, 20);

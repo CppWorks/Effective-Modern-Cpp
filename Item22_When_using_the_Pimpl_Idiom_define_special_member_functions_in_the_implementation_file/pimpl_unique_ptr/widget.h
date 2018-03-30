@@ -10,21 +10,21 @@
 
 #include <memory>
 
-class Widget {                  // in "widget.h"
-public:
+class Widget {  // in "widget.h"
+ public:
   Widget();
-  ~Widget();                    // declaration only
+  ~Widget();  // declaration only
 
-  //Widget(Widget&& rhs) = default;             // right idea
-  //Widget& operator=(Widget&& rhs) = default;  // wrong code!
+  // Widget(Widget&& rhs) = default;             // right idea
+  // Widget& operator=(Widget&& rhs) = default;  // wrong code!
 
-  Widget(Widget&& rhs);                         // declarations
-  Widget& operator=(Widget&& rhs);              // only
+  Widget(Widget&& rhs);             // declarations
+  Widget& operator=(Widget&& rhs);  // only
 
-  Widget(const Widget& rhs);                    // declarations
-  Widget& operator=(const Widget& rhs);         // only
+  Widget(const Widget& rhs);             // declarations
+  Widget& operator=(const Widget& rhs);  // only
 
-private:
+ private:
   struct Impl;
   std::unique_ptr<Impl> pImpl;  // use smart pointer
 };                              // instead of raw pointer

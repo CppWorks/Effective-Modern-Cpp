@@ -7,16 +7,14 @@
 
 #include <type_traits>
 
-class Person {                                  // C++14
-public:
-  template<
-    typename T,
-    typename = std::enable_if_t<               // less code here
-                 !std::is_base_of<Person,
-                                  std::decay_t<T>  // and here
-                                 >::value
-               >                                   // and here
-  >
+class Person {  // C++14
+ public:
+  template <typename T,
+            typename = std::enable_if_t<  // less code here
+                !std::is_base_of<Person,
+                                 std::decay_t<T>  // and here
+                                 >::value>        // and here
+            >
   explicit Person(T&& n);
   // ...
 };

@@ -9,19 +9,15 @@
 #include <utility>
 
 class Matrix {
-public:
-    Matrix& operator+=(const Matrix& rhs);
+ public:
+  Matrix& operator+=(const Matrix& rhs);
 };
 
-Matrix& Matrix::operator+=(const Matrix& rhs)
-{
-    return *this;
-}
+Matrix& Matrix::operator+=(const Matrix& rhs) { return *this; }
 
-Matrix                                     // by-value return
-operator+(Matrix&& lhs, const Matrix& rhs)
-{
+Matrix  // by-value return
+operator+(Matrix&& lhs, const Matrix& rhs) {
   lhs += rhs;
-  return std::move(lhs);             // move lhs into return value
-  //return lhs;                        // copy lhs into return value
+  return std::move(lhs);  // move lhs into return value
+  // return lhs;                        // copy lhs into return value
 }

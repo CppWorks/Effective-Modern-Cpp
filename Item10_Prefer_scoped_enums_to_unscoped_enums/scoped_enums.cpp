@@ -8,13 +8,13 @@
 enum class Color { black, white, red };  // black, white, red
                                          // are scoped to Color
 
-auto white = false;              // fine, no other
-                                 // "white" in scope
+auto white = false;  // fine, no other
+                     // "white" in scope
 
-//Color c1 = white;                 // error! no enumerator named
-                                 // "white" is in this scope
+// Color c1 = white;                 // error! no enumerator named
+// "white" is in this scope
 
-Color c2 = Color::white;          // fine
+Color c2 = Color::white;  // fine
 
-auto c3 = Color::white;           // also fine (and in accord
-                                 // with Item4's advice)
+auto c3 = Color::white;  // also fine (and in accord
+                         // with Item4's advice)

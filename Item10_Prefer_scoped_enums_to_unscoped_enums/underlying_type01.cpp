@@ -8,9 +8,10 @@
 
 enum Color { black, white, red };
 
-enum Status { good = 0,
-              failed = 1,
-              incomplete = 100,
-              corrupt = 200,
-              indeterminate = 0xFFFFFFFF
-            };
+enum Status {
+  good = 0,
+  failed = 1,
+  incomplete = 100,
+  corrupt = 200,
+  indeterminate = 0xFFFFFFFF
+};

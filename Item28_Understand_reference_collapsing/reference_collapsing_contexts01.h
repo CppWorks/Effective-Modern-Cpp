@@ -5,7 +5,7 @@ class Widget {};
 
 Widget widgetFactory() { return Widget(); }  // function returning rvalue
 
-template<typename T>
+template <typename T>
 void func(T&& param) {}
 
 #endif /* ENCODING_MECHANISM01_H */

@@ -6,7 +6,7 @@
  */
 
 class Base {
-public:
+ public:
   virtual void mf1() const;
   virtual void mf2(int x);
   virtual void mf3() &;
@@ -14,8 +14,8 @@ public:
 };
 
 // Uncomment this, compile and see the compiler errors.
-//class Derived: public Base {
-//public:
+// class Derived: public Base {
+// public:
 //  virtual void mf1() override;
 //  virtual void mf2(unsigned int x) override;
 //  virtual void mf3() && override;

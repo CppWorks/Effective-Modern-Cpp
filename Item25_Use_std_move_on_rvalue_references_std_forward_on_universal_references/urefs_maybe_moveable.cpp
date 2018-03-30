@@ -14,11 +14,13 @@
 #include <string>
 
 class Widget {
-public:
-  template<typename T>
-  void setName(T&& newName)             // newName is
-  { name = std::forward<T>(newName); }  // universal reference
+ public:
+  template <typename T>
+  void setName(T&& newName)  // newName is
+  {
+    name = std::forward<T>(newName);
+  }  // universal reference
 
-private:
+ private:
   std::string name;
 };

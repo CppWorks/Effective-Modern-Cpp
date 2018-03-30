@@ -15,12 +15,11 @@ int x;
 
 // Simple joy 2: the simple joy of declaring a local variable to be initialized
 // with the value of an iterator.
-template<typename It>   // algorithm to dwim ("do what I mean")
+template <typename It>  // algorithm to dwim ("do what I mean")
 void dwim(It b, It e)   // for all elements in range from
 {                       // b to e
   while (b != e) {
-    typename std::iterator_traits<It>::value_type
-      currValue = *b;
+    typename std::iterator_traits<It>::value_type currValue = *b;
     // ...
   }
 }
@@ -29,11 +28,9 @@ void dwim(It b, It e)   // for all elements in range from
 // of a closure.  But the type of a closure is known only to the compiler, hence
 // can't be written out...
 
-
 // Perhaps you're thinking that we don't really need auto to declare a variable
 // that holds a closure, because we use a std::function object:
 std::function<bool(const std::unique_ptr<Widget>&,
                    const std::unique_ptr<Widget>&)>
-  derefUPLess = [](const std::unique_ptr<Widget>& p1,
-                   const std::unique_ptr<Widget>& p2)
-                  { return *p1 < *p2; };
+    derefUPLess = [](const std::unique_ptr<Widget>& p1,
+                     const std::unique_ptr<Widget>& p2) { return *p1 < *p2; };

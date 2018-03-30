@@ -21,21 +21,19 @@
  */
 class Widget {};
 
-Widget makeWidget()
-{
-  Widget w;               // local variable
+Widget makeWidget() {
+  Widget w;  // local variable
 
   // ...                  // configure w
 
-  return w;               // "copy" w into return value
+  return w;  // "copy" w into return value
 
-  //return std::move(w);  // move w into return value
-}                         // (don't do this!)
-
+  // return std::move(w);  // move w into return value
+}  // (don't do this!)
 
 Widget makeWidget(Widget w)  // by value parameter of same
 {                            // type as function's return
   // ...
-  
-  return w;                  // treat w as rvalue
+
+  return w;  // treat w as rvalue
 }

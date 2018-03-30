@@ -12,15 +12,15 @@
  *
  * References:
  *
- *   [1] http://scottmeyers.blogspot.be/2016/11/help-me-sort-out-meaning-of-as.html
+ *   [1]
+ * http://scottmeyers.blogspot.be/2016/11/help-me-sort-out-meaning-of-as.html
  */
 
 #include <iostream>
 #include <vector>
 
 class Widget {
-public:
-
+ public:
   Widget() {  // default ctor
     std::cout << "Widget()" << std::endl;
   };
@@ -30,12 +30,11 @@ public:
   };
 
   // ...                                   // no implicit
-                                           // conversion funcs
+  // conversion funcs
 };
 
-int main()
-{
-  Widget w1;    // calls default ctor
+int main() {
+  Widget w1;  // calls default ctor
 
   Widget w2{};  // also calls default ctor
 

@@ -8,13 +8,13 @@
 
 #include <memory>
 
-class Widget {                  // in "widget.h"
-public:
+class Widget {  // in "widget.h"
+ public:
   Widget();
-                                // no declarations for dtor
-                                // or move operations
+  // no declarations for dtor
+  // or move operations
 
-private:
+ private:
   struct Impl;
   std::shared_ptr<Impl> pImpl;  // std::shared_ptr
 };                              // instead of std::unique_ptr

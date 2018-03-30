@@ -13,22 +13,20 @@
 
 #include "Widget.h"
 
-class IsValAndArch {                         // "is validated
-public:                                      // and archived"
+class IsValAndArch {  // "is validated
+ public:              // and archived"
   using DataType = std::unique_ptr<Widget>;
 
-  explicit IsValAndArch(DataType&& ptr)      // Item 25 explains
-  : pw(std::move(ptr)) {}                    // use of std::move
+  explicit IsValAndArch(DataType&& ptr)  // Item 25 explains
+      : pw(std::move(ptr)) {}            // use of std::move
 
-  bool operator()() const
-  { return pw->isValidated() && pw->isArchived(); }
+  bool operator()() const { return pw->isValidated() && pw->isArchived(); }
 
-private:
+ private:
   DataType pw;
 };
 
-int main()
-{
+int main() {
   // REMARK: due to the use of std::make_unique, this line is C++14 and not
   // C++11!!!
   auto func = IsValAndArch(std::make_unique<Widget>());

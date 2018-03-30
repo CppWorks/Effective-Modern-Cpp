@@ -9,10 +9,10 @@
 
 void authenticateUser() {}
 
-template<typename Container, typename Index>  // C++14 only;
-decltype(auto)                                // works, but
-authAndAccess(Container& c, Index i)          // still requires
-{                                             // refinement
+template <typename Container, typename Index>  // C++14 only;
+decltype(auto)                                 // works, but
+    authAndAccess(Container& c, Index i)       // still requires
+{                                              // refinement
   authenticateUser();
   return c[i];
 }

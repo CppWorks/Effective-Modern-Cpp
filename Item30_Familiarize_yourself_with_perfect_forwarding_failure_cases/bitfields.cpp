@@ -14,33 +14,27 @@
 #include <utility>
 
 struct IPv4Header {
-  std::uint32_t version:4,
-                IHL:4,
-                DSCP:6,
-                ECN:2,
-                totalLength:16;
+  std::uint32_t version : 4, IHL : 4, DSCP : 6, ECN : 2, totalLength : 16;
   // ...
 };
 
 void f(std::size_t sz) {}  // function to call
 
-template<typename T>
-void fwd(T&& param)             // accept any argument
+template <typename T>
+void fwd(T&& param)  // accept any argument
 {
-  f(std::forward<T>(param));    // forward it to f
+  f(std::forward<T>(param));  // forward it to f
 }
 
-int main()
-{
+int main() {
   IPv4Header h;
   // ...
-  f(h.totalLength);          // fine
+  f(h.totalLength);  // fine
 
-  //fwd(h.totalLength);      // error!
-
+  // fwd(h.totalLength);      // error!
 
   // copy bitfield value; see Item 6 for info on init. form
   auto length = static_cast<std::uint16_t>(h.totalLength);
 
-  fwd(length);               // forward the copy
+  fwd(length);  // forward the copy
 }

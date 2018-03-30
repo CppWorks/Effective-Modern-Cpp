@@ -6,20 +6,18 @@
  *   reference.
  */
 
-#include <string>
 #include <deque>
+#include <string>
 
 #include "uref_cpp11.h"
 
-std::deque<std::string> makeStringDeque()   // factory function
+std::deque<std::string> makeStringDeque()  // factory function
 {
   std::deque<std::string> ds;
   return ds;
 }
 
-int main()
-{
-  
+int main() {
   // make copy of 5th element of deque returned
   // from makeStringDeque
   auto s = authAndAccess(makeStringDeque(), 5);

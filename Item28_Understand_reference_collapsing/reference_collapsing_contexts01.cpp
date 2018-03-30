@@ -12,17 +12,16 @@
 
 #include "reference_collapsing_contexts01.h"
 
-int main()
-{
-    Widget w;                // a variable (an lvalue)
+int main() {
+  Widget w;  // a variable (an lvalue)
 
-    func(w);                 // call func with lvalue; T deduced
-                             // to be Widget&
+  func(w);  // call func with lvalue; T deduced
+            // to be Widget&
 
-    func(widgetFactory());   // call func with rvalue; T deduced
-                             // to be Widget
+  func(widgetFactory());  // call func with rvalue; T deduced
+                          // to be Widget
 
-    auto&& w1 = w;
+  auto&& w1 = w;
 
-    auto&& w2 = widgetFactory();
+  auto&& w2 = widgetFactory();
 }

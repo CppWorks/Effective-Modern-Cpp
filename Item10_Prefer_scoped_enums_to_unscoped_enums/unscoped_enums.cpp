@@ -9,5 +9,5 @@
 enum Color { black, white, red };  // black, white, red are
                                    // in same scope as Color
 
-//auto white = false;                // error! white already
-                                   // declared in this scope
+// auto white = false;                // error! white already
+// declared in this scope

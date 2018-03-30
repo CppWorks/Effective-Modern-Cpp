@@ -10,33 +10,31 @@
 
 class Widget {};
 
-const int i = 0;           // decltype(i) is const int
+const int i = 0;  // decltype(i) is const int
 
-bool f(const Widget& w);   // decltype(w) is const Widget&
-                           // decltype(f) is bool(const Widget&)
+bool f(const Widget& w);  // decltype(w) is const Widget&
+                          // decltype(f) is bool(const Widget&)
 
 struct Point {
-  int x, y;                // decltype(Point::x) is int
-};                         // decltype(Point::y) is int
+  int x, y;  // decltype(Point::x) is int
+};           // decltype(Point::y) is int
 
-Widget w;                  // decltype(w) is Widget
+Widget w;  // decltype(w) is Widget
 
-
-template<typename T>       // simplified version of std::vector
+template <typename T>  // simplified version of std::vector
 class vector {
-public:
+ public:
   // ...
   T& operator[](std::size_t index);
   // ...
 };
 
-int main()
-{
+int main() {
+  if (f(w)) {
+  }  // decltype(f(w)) is bool
 
-  if (f(w)) {}              // decltype(f(w)) is bool
-
-  vector<int> v;            // decltype(v) is vector<int>
+  vector<int> v;  // decltype(v) is vector<int>
   // ...
-  if (v[0] == 0) {}         // decltype(v[0]) is int&
-
+  if (v[0] == 0) {
+  }  // decltype(v[0]) is int&
 }

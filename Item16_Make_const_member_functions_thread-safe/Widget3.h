@@ -13,13 +13,12 @@ int expensiveComputation1() { return 1; }
 int expensiveComputation2() { return 2; }
 
 class Widget {
-public:
-
-  int magicValue() const
-  {
+ public:
+  int magicValue() const {
     std::lock_guard<std::mutex> guard(m);  // lock m
 
-    if (cacheValid) return cachedValue;
+    if (cacheValid)
+      return cachedValue;
     else {
       auto val1 = expensiveComputation1();
       auto val2 = expensiveComputation2();
@@ -27,10 +26,10 @@ public:
       cacheValid = true;
       return cachedValue;
     }
-  }                                        // unlock m
+  }  // unlock m
 
-private:
+ private:
   mutable std::mutex m;
-  mutable int cachedValue;                 // no longer atomic
-  mutable bool cacheValid{ false };        // no longer atomic
+  mutable int cachedValue;         // no longer atomic
+  mutable bool cacheValid{false};  // no longer atomic
 };

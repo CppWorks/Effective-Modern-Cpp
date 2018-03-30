@@ -5,9 +5,8 @@
 
 class Investment;
 
-void makeLogEntry(Investment* pInvestment)
-{
-    std::cout << "makeLogEntry()" << std::endl;
+void makeLogEntry(Investment* pInvestment) {
+  std::cout << "makeLogEntry()" << std::endl;
 }
 
 #endif  // UTILS_H

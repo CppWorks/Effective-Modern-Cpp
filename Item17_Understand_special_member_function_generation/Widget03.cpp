@@ -12,12 +12,12 @@
  */
 
 class Widget {
-public:
+ public:
   // ...
-  template<typename T>              // construct Widget
-  Widget(const T& rhs);             // from anything
+  template <typename T>  // construct Widget
+  Widget(const T& rhs);  // from anything
 
-  template<typename T>              // assign Widget
+  template <typename T>             // assign Widget
   Widget& operator=(const T& rhs);  // from anything
   // ...
 };

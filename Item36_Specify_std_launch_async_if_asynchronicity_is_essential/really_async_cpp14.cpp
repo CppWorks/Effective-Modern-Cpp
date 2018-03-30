@@ -8,24 +8,17 @@
 #include <future>
 #include <iostream>
 
-template<typename F, typename... Ts>
-inline
-auto                                     // C++14
-reallyAsync(F&& f, Ts&&... params)
-{
-  return std::async(std::launch::async,
-                    std::forward<F>(f),
+template <typename F, typename... Ts>
+inline auto  // C++14
+    reallyAsync(F&& f, Ts&&... params) {
+  return std::async(std::launch::async, std::forward<F>(f),
                     std::forward<Ts>(params)...);
 }
 
-void f()
-{
-    std::cout << "f()" << std::endl;
-}
+void f() { std::cout << "f()" << std::endl; }
 
-int main()
-{
-    auto fut = reallyAsync(f);  // run f asynchronously;
-                                // throw if std::async
-                                // would throw
+int main() {
+  auto fut = reallyAsync(f);  // run f asynchronously;
+                              // throw if std::async
+                              // would throw
 }

@@ -9,15 +9,14 @@
 
 class Widget {};
 
+void f(Widget&& param);  // rvalue reference
 
-void f(Widget&& param);          // rvalue reference
+Widget&& var1 = Widget();  // rvalue reference
 
-Widget&& var1 = Widget();        // rvalue reference
+auto&& var2 = var1;  // not rvalue reference
 
-auto&& var2 = var1;              // not rvalue reference
-
-template<typename T>
+template <typename T>
 void f(std::vector<T>&& param);  // rvalue reference
 
-template<typename T>
-void f(T&& param);               // not rvalue reference
+template <typename T>
+void f(T&& param);  // not rvalue reference

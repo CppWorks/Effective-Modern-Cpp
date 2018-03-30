@@ -20,47 +20,42 @@
 #include <set>
 #include <string>
 
-std::multiset<std::string> names;      // global data structure
+std::multiset<std::string> names;  // global data structure
 
-void log(const std::chrono::system_clock::time_point& t, const char* s)
-{
+void log(const std::chrono::system_clock::time_point& t, const char* s) {
   std::cout << "Making log entry" << std::endl;
 }
 
-std::string nameFromIdx(int idx)     // return name
-{                                      // corresponding to idx
-    std::string s("Test");
-    return s;
+std::string nameFromIdx(int idx)  // return name
+{                                 // corresponding to idx
+  std::string s("Test");
+  return s;
 }
 
-template<typename T>
-void logAndAdd(T&& name)
-{
+template <typename T>
+void logAndAdd(T&& name) {
   auto now = std::chrono::system_clock::now();
   log(now, "logAndAdd");
   names.emplace(std::forward<T>(name));
 }
 
-void logAndAdd(int idx)
-{
+void logAndAdd(int idx) {
   auto now = std::chrono::system_clock::now();
   log(now, "logAndAdd");
   names.emplace(nameFromIdx(idx));
 }
 
-int main()
-{
-
+int main() {
   short nameIdx;
 
-  std::string petName("Darla");          // as before
+  std::string petName("Darla");  // as before
 
   logAndAdd(petName);                    // as before, these
   logAndAdd(std::string("Persephone"));  // calls all invoke
   logAndAdd("Patty Dog");                // the T&& overload
 
-  logAndAdd(22);                         // calls int overload
+  logAndAdd(22);  // calls int overload
 
-  nameIdx = 1;                           // give nameIdx a value
-  //logAndAdd(nameIdx);                  // error!
+  nameIdx = 1;  // give nameIdx a value
+  // logAndAdd(nameIdx);                  // error!
 }

@@ -8,12 +8,14 @@
 #include <string>
 
 class Widget {
-public:
-  Widget(Widget&& rhs)                     // unconventional,
-  : s(std::forward<std::string>(rhs.s))    // undesirable
-  { ++moveCtorCalls; }                     // implementation
+ public:
+  Widget(Widget&& rhs)                       // unconventional,
+      : s(std::forward<std::string>(rhs.s))  // undesirable
+  {
+    ++moveCtorCalls;
+  }  // implementation
 
-private:
+ private:
   static std::size_t moveCtorCalls;
   std::string s;
 };

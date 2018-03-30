@@ -9,30 +9,27 @@
 #include <iostream>
 
 class Widget {
-public:
-
-  void doWork() & {                          // this version of doWork applies only
+ public:
+  void doWork() & {  // this version of doWork applies only
     std::cout << "doWork() &" << std::endl;  // when *this is an lvalue
   }
 
-  void doWork() && {                         // this version of doWork applies only
-    std::cout << "doWork() &&" << std::endl; // when *this is an rvalue
+  void doWork() && {  // this version of doWork applies only
+    std::cout << "doWork() &&" << std::endl;  // when *this is an rvalue
   }
-
 };
 
-Widget makeWidget()      // factory function (returns rvalue)
+Widget makeWidget()  // factory function (returns rvalue)
 {
   Widget w;
   return w;
 }
 
-int main()
-{
-  Widget w;               // normal object (an lvalue)
+int main() {
+  Widget w;  // normal object (an lvalue)
 
-  w.doWork();             // calls Widget::doWork for lvalues
-                          // (i.e., Widget::doWork &)
+  w.doWork();  // calls Widget::doWork for lvalues
+               // (i.e., Widget::doWork &)
 
   makeWidget().doWork();  // calls Widget::doWork for rvalues
                           // (i.e., Widget::doWork &&)

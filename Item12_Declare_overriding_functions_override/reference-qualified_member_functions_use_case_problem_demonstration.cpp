@@ -7,23 +7,21 @@
 #include <vector>
 
 class Widget {
-public:
+ public:
   using DataType = std::vector<double>;  // see Item 9 for
                                          // info on "using"
   DataType& data() { return values; }
 
-private:
+ private:
   DataType values;
 };
 
-Widget makeWidget()
-{
+Widget makeWidget() {
   Widget w;
   return w;
 }
 
-int main()
-{
+int main() {
   Widget w;
 
   auto vals1 = w.data();  // copy w.values into vals1

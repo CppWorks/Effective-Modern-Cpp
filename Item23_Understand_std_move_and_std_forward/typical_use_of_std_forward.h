@@ -17,14 +17,13 @@ class Widget {};
 void makeLogEntry(const char* message,
                   const std::chrono::time_point<std::chrono::system_clock> t) {}
 
-void process(Widget& lvalArg);            // process lvalues
-void process(Widget&& rvalArg);           // process rvalues
+void process(Widget& lvalArg);   // process lvalues
+void process(Widget&& rvalArg);  // process rvalues
 
-template<typename T>                      // template that passes
-void logAndProcess(T&& param)             // param to process
+template <typename T>          // template that passes
+void logAndProcess(T&& param)  // param to process
 {
-  auto now =
-    std::chrono::system_clock::now();     // get current time
+  auto now = std::chrono::system_clock::now();  // get current time
 
   makeLogEntry("Calling 'process'", now);
   process(std::forward<T>(param));

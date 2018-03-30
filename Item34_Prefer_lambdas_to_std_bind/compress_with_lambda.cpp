@@ -6,6 +6,6 @@ auto compressRateL =                  // w is captured by
 
 int main()
 {
-  compressRateL(CompLevel::High);     // arg is passed
-                                      // by value
+  compressRateL(CompLevel::High);  // arg is passed
+                                   // by value
 }

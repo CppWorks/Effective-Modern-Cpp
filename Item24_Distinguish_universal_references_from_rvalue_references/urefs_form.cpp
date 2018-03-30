@@ -11,19 +11,17 @@
 
 class Widget {};
 
-
-template<typename T>
+template <typename T>
 void f(std::vector<T>&& param);  // param is an rvalue reference
 
-template<typename T>
-void f(const T&& param);         // param is an rvalue reference
+template <typename T>
+void f(const T&& param);  // param is an rvalue reference
 
-template<typename MyTemplateType>       // param is a
+template <typename MyTemplateType>      // param is a
 void someFunc(MyTemplateType&& param);  // universal reference
 
-int main()
-{
-    std::vector<int> v;
-//    f(v);                        // error! can't bind lvalue to
-                                 // rvalue reference
+int main() {
+  std::vector<int> v;
+  //    f(v);                        // error! can't bind lvalue to
+  // rvalue reference
 }

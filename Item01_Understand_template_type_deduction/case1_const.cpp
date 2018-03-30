@@ -20,18 +20,17 @@
  *   deduced as part of T.
  */
 
-template<typename T>
+template <typename T>
 void f(const T& param) {}  // param is now a ref-to-const
 
-int main()
-{
-  int x = 27;              // as before
-  const int cx = x;        // as before
-  const int& rx = x;       // as before
+int main() {
+  int x = 27;         // as before
+  const int cx = x;   // as before
+  const int& rx = x;  // as before
 
-  f(x);                    // T is int, param's type is const int&
+  f(x);  // T is int, param's type is const int&
 
-  f(cx);                   // T is int, param's type is const int&
+  f(cx);  // T is int, param's type is const int&
 
-  f(rx);                   // T is int, param's type is const int&
+  f(rx);  // T is int, param's type is const int&
 }

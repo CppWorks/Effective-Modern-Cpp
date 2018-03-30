@@ -7,10 +7,10 @@
  */
 
 class Widget {
-public:
+ public:
   // ...
-  Widget(Widget&& rhs);             // move constructor
-  
+  Widget(Widget&& rhs);  // move constructor
+
   Widget& operator=(Widget&& rhs);  // move assignment operator
   // ...
 };

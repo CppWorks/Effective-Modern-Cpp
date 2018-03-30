@@ -18,16 +18,15 @@
  *   things would work essentially the same way:
  */
 
-template<typename T>
-void f(T* param) {}      // param is now a pointer
+template <typename T>
+void f(T* param) {}  // param is now a pointer
 
-int main()
-{
-  int x = 27;            // as before
-  const int *px = &x;    // px is a ptr to x as a const int
+int main() {
+  int x = 27;          // as before
+  const int* px = &x;  // px is a ptr to x as a const int
 
-  f(&x);                 // T is int, param's type is int*
+  f(&x);  // T is int, param's type is int*
 
-  f(px);                 // T is const int,
-                         // param's type is const int*
+  f(px);  // T is const int,
+          // param's type is const int*
 }

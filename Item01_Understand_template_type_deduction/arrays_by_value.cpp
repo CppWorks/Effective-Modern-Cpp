@@ -6,14 +6,13 @@
  *   value is deduced to be a pointer type.
  */
 
-template<typename T>
+template <typename T>
 void f(T param) {}  // template with by-value parameter
 
-int main()
-{
-    const char name[] = "J. P. Briggs";  // name's type is
-                                         // const char[13]
+int main() {
+  const char name[] = "J. P. Briggs";  // name's type is
+                                       // const char[13]
 
-    f(name);                   // what types are deduced for T and param?
-                               // -> name is array, but T deduced as const char*
+  f(name);  // what types are deduced for T and param?
+            // -> name is array, but T deduced as const char*
 }

@@ -9,37 +9,36 @@
 
 std::string nameFromIdx(int idx)  // return std::string
 {                                 // corresponding to idx
-    std::string s("Test");
-    return s;
+  std::string s("Test");
+  return s;
 }
 
 class Person {
-public:
+ public:
+  // Person() = default;
 
-  //Person() = default;
-
-  template<typename T>
-  explicit Person(T&& n)          // perfect forwarding ctor;
-  : name(std::forward<T>(n)) {    // initializes data member
+  template <typename T>
+  explicit Person(T&& n)            // perfect forwarding ctor;
+      : name(std::forward<T>(n)) {  // initializes data member
     std::cout << "Person(T&&)" << std::endl;
   }
 
-  explicit Person(int idx)        // int ctor
-  : name(nameFromIdx(idx)) {
+  explicit Person(int idx)  // int ctor
+      : name(nameFromIdx(idx)) {
     std::cout << "Person(int idx)" << std::endl;
   }
 
-  //Person(const Person& rhs);    // copy ctor
-                                  // (compiler-generated)
-  //Person(Person&&);             // move ctor
-                                  // (compiler-generated)
+  // Person(const Person& rhs);    // copy ctor
+  // (compiler-generated)
+  // Person(Person&&);             // move ctor
+  // (compiler-generated)
 
-private:
+ private:
   std::string name;
 };
 
-//class SpecialPerson: public Person {
-//public:
+// class SpecialPerson: public Person {
+// public:
 //  SpecialPerson(const SpecialPerson& rhs)  // copy ctor; calls
 //  : Person(rhs)                            // base class
 //  { /* ... */ }                            // forwarding ctor!
@@ -49,18 +48,16 @@ private:
 //  { /* ... */ }                            // forwarding ctor!
 //};
 
-
-int main()
-{
+int main() {
   {
     Person p("Nancy");
 
-    //auto cloneOfP(p);             // create new Person from p;
-                                    // this won't compile!
+    // auto cloneOfP(p);             // create new Person from p;
+    // this won't compile!
   }
   {
-    const Person cp("Nancy");       // object is now const
+    const Person cp("Nancy");  // object is now const
 
-    auto cloneOfP(cp);              // calls copy constructor!
+    auto cloneOfP(cp);  // calls copy constructor!
   }
 }

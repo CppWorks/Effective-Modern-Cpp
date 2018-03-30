@@ -11,33 +11,30 @@
 #include <set>
 #include <string>
 
-std::multiset<std::string> names;      // global data structure
+std::multiset<std::string> names;  // global data structure
 
-void log(const std::chrono::system_clock::time_point& t, const char* s)
-{
+void log(const std::chrono::system_clock::time_point& t, const char* s) {
   std::cout << "Making log entry" << std::endl;
 }
 
-template<typename T>
-void logAndAdd(T&& name)
-{
+template <typename T>
+void logAndAdd(T&& name) {
   auto now = std::chrono::system_clock::now();
   log(now, "logAndAdd");
   names.emplace(std::forward<T>(name));
 }
 
-int main()
-{
-  std::string petName("Darla");          // as before
+int main() {
+  std::string petName("Darla");  // as before
 
-  logAndAdd(petName);                    // as before, copy
-                                         // lvalue into multiset
+  logAndAdd(petName);  // as before, copy
+                       // lvalue into multiset
 
   logAndAdd(std::string("Persephone"));  // move rvalue instead
                                          // of copying it
 
-  logAndAdd("Patty Dog");                // create std::string
-                                         // in multiset instead of
-                                         // copying a temporary
-                                         // std::string
+  logAndAdd("Patty Dog");  // create std::string
+                           // in multiset instead of
+                           // copying a temporary
+                           // std::string
 }

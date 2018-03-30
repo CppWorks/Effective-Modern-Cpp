@@ -10,14 +10,14 @@
  */
 
 class Widget {
-public:
+ public:
   // ...
-  ~Widget();                             // user-declared dtor
+  ~Widget();  // user-declared dtor
 
   // ...                                 // default copy-ctor
-  Widget(const Widget&) = default;       // behavior is OK
-  
-  Widget&                                // default copy-assign
-    operator=(const Widget&) = default;  // behavior is OK
+  Widget(const Widget&) = default;  // behavior is OK
+
+  Widget&                              // default copy-assign
+  operator=(const Widget&) = default;  // behavior is OK
   // ...
 };

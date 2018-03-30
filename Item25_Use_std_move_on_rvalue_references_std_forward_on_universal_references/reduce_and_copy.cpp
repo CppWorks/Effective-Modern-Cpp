@@ -11,13 +11,13 @@
 #include <utility>
 
 struct Fraction {
-  void reduce() {};
+  void reduce(){};
 };
 
-template<typename T>
-Fraction                          // by value return
-reduceAndCopy(T&& frac)           // universal reference param
+template <typename T>
+Fraction                     // by value return
+    reduceAndCopy(T&& frac)  // universal reference param
 {
   frac.reduce();
-  return std::forward<T>(frac);   // move rvalue into return
-}                                 // value, copy lvalue
+  return std::forward<T>(frac);  // move rvalue into return
+}  // value, copy lvalue

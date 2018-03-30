@@ -8,13 +8,12 @@
 #include <utility>
 #include <vector>
 
-int main()
-{
-  std::vector<double> data;             // object to be moved
-                                        // into closure
-  
+int main() {
+  std::vector<double> data;  // object to be moved
+                             // into closure
+
   // ...                                // populate data
-  
+
   auto func = [data = std::move(data)]  // C++14 init capture
-              { /* uses of data */ };
+      {/* uses of data */};
 }

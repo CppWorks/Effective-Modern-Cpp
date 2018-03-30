@@ -8,23 +8,21 @@
 
 #include <future>
 
-using namespace std::literals;         // for C++14 duration
-                                       // suffixes; see Item 34
+using namespace std::literals;  // for C++14 duration
+                                // suffixes; see Item 34
 
-void f()                               // f sleeps for 1 second,
-{                                      // then returns
-    std::this_thread::sleep_for(1s);
+void f()  // f sleeps for 1 second,
+{         // then returns
+  std::this_thread::sleep_for(1s);
 }
 
+int main() {
+  auto fut = std::async(f);  // run f asynchronously
+                             // (conceptually)
 
-int main()
-{
-    auto fut = std::async(f);          // run f asynchronously
-                                       // (conceptually)
-    
-    while (fut.wait_for(100ms) !=      // loop until f has
-           std::future_status::ready)  // finished running...
-    {                                  // which may never happen!
-      // ...
-    }
+  while (fut.wait_for(100ms) !=      // loop until f has
+         std::future_status::ready)  // finished running...
+  {                                  // which may never happen!
+    // ...
+  }
 }

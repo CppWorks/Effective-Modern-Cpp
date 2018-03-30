@@ -15,26 +15,23 @@
 
 #include <array>
 
-int main()
-{
-  int sz;                             // non constexpr variable
+int main() {
+  int sz;  // non constexpr variable
 
-  //constexpr auto arraysize1 = sz;   // error! sz's value not
-                                      // known at compilation
+  // constexpr auto arraysize1 = sz;   // error! sz's value not
+  // known at compilation
 
-  //std::array<int, sz> data1;        // error! same problem
+  // std::array<int, sz> data1;        // error! same problem
 
-  constexpr auto arraySize2 = 10;     // fine, 10 is a
-                                      // compile-time constant
+  constexpr auto arraySize2 = 10;  // fine, 10 is a
+                                   // compile-time constant
 
   std::array<int, arraySize2> data2;  // fine, arraySize2
                                       // is constexpr
 
+  const auto arraySize = sz;  // fine, arraySize is
+                              // const copy of sz
 
-
-  const auto arraySize = sz;          // fine, arraySize is
-                                      // const copy of sz
-
-  //std::array<int, arraySize> data;  // error! arraySize's value
-                                      // not known at compilation
+  // std::array<int, arraySize> data;  // error! arraySize's value
+  // not known at compilation
 }

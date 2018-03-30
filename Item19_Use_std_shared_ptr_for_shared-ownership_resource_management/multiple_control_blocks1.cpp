@@ -2,16 +2,15 @@
 #include <vector>
 
 class Widget {
-public:
+ public:
   void process();
 };
 
 std::vector<std::shared_ptr<Widget>> processedWidgets;
 
-void Widget::process()
-{
+void Widget::process() {
   // ...                                  // process the widget
 
-  processedWidgets.emplace_back(this);    // add it to list of
-}                                         // processed Widgets;
-                                          // this is wrong!
+  processedWidgets.emplace_back(this);  // add it to list of
+}  // processed Widgets;
+   // this is wrong!

@@ -8,10 +8,10 @@
 #include <vector>
 
 class Polynomial {
-public:
-  using RootsType =        // data structure holding values
-    std::vector<double>;   // where polynomial evals to zero
-                           // (see Item 9 for info on "using")
+ public:
+  using RootsType =         // data structure holding values
+      std::vector<double>;  // where polynomial evals to zero
+                            // (see Item 9 for info on "using")
 
   RootsType roots() const;
 };

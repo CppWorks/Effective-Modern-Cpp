@@ -13,16 +13,16 @@
 #include <string>
 
 class Annotation {
-public:
-
-  //explicit Annotation(std::string text);  // param to be copied,
+ public:
+  // explicit Annotation(std::string text);  // param to be copied,
   //                                        // so per Item 41,
   //                                        // pass by value
 
   explicit Annotation(const std::string text)
-  : value(std::move(text))  // "move" text into value; this code
-  { /* ... */ }             // doesn't do what it seems to!
+      : value(std::move(text))  // "move" text into value; this code
+  {                             /* ... */
+  }                             // doesn't do what it seems to!
 
-private:
+ private:
   std::string value;
 };

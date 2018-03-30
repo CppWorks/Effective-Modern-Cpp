@@ -8,7 +8,6 @@
  */
 
 template <class C>
-auto cbegin(const C& container)->decltype(std::begin(container))
-{
-  return begin(container);    // see explanation below
+auto cbegin(const C& container) -> decltype(std::begin(container)) {
+  return begin(container);  // see explanation below
 }

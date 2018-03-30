@@ -11,45 +11,41 @@
 
 #include <memory>
 
-template<typename... Ts>
-auto makeInvestment(Ts&&... args)                  // C++14
+template <typename... Ts>
+auto makeInvestment(Ts&&... args)  // C++14
 {
-
-  auto delInvmt = [](Investment* pInvestment)   // this is now
-                  {                             // inside
-                    makeLogEntry(pInvestment);  // make-
-                    delete pInvestment;         // Investment
-                  };
+  auto delInvmt = [](Investment* pInvestment)  // this is now
+  {                                            // inside
+    makeLogEntry(pInvestment);                 // make-
+    delete pInvestment;                        // Investment
+  };
 
   std::unique_ptr<Investment, decltype(delInvmt)>  // as
-    pInv(nullptr, delInvmt);                       // before
+      pInv(nullptr, delInvmt);                     // before
 
-  if ( needStock )            // as before
+  if (needStock)  // as before
   {
     pInv.reset(new Stock(std::forward<Ts>(args)...));
-  }
-  else if ( needBond )         // as before
+  } else if (needBond)  // as before
   {
     pInv.reset(new Bond(std::forward<Ts>(args)...));
-  }
-  else if ( needRealEstate )  // as before
+  } else if (needRealEstate)  // as before
   {
     pInv.reset(new RealEstate(std::forward<Ts>(args)...));
   }
 
-  return pInv;                                             // as before
+  return pInv;  // as before
 }
 
-int main ()
-{
+int main() {
   // ...
 
   auto pInvestment =                    // pInvestment is of type
-    makeInvestment( /* arguments */ );  // std::unique_ptr<Investment>
+      makeInvestment(/* arguments */);  // std::unique_ptr<Investment>
 
   // ...
 
   std::shared_ptr<Investment> sp =      // converts std::unique_ptr
-    makeInvestment( /* arguments */ );  // to std::shared_ptr
+      makeInvestment(/* arguments */);  // to std::shared_ptr
 
-}                                       // destroy *pInvestment
+}  // destroy *pInvestment
