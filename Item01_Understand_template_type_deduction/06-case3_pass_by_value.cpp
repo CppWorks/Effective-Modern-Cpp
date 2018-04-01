@@ -1,22 +1,25 @@
 /*
- * Key idea:
- *
- *   If we're dealing with pass-by-value
- *
- *     template <typename T>
- *     void f(T param);        // param is now passed by value
- *
- *   That means that param will be a copy of whatever is passed in - a
- *   completely new object.  The fact that param will be a new object motivates
- *   the rules that govern how T is deduced from expr:
- *
- *   1. As before, if expr's type is a reference, ignore the reference part.
- *
- *   2. If, after ignoring expr's reference-ness, expr is const, ignore that,
- *      too.  If it's volatile, also ignore that. (volatile objects are
- * uncommon.
- *      They're generally used only for implementing device drivers.)
- */
+
+Key idea:
+
+  If we're dealing with pass-by-value
+
+  .. code-block:: cpp
+
+     template <typename T>
+     void f(T param);        // param is now passed by value
+
+  That means that param will be a copy of whatever is passed in - a
+  completely new object.  The fact that param will be a new object motivates
+  the rules that govern how ``T`` is deduced from expr:
+
+  1. As before, if expr's type is a reference, ignore the reference part.
+
+  2. If, after ignoring expr's reference-ness, expr is const, ignore that,
+     too.  If it's volatile, also ignore that. (volatile objects are
+     uncommon. They're generally used only for implementing device drivers.)
+
+*/
 
 template <typename T>
 void f(T param) {}  // param is now passed by value

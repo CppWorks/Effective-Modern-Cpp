@@ -1,10 +1,12 @@
 /*
- * Key idea:
- *
- *   Because array parameter declarations are treated as if they were pointer
- *   parameters, the type of an array that's passed to a template function by
- *   value is deduced to be a pointer type.
- */
+
+Key idea:
+
+  Because array parameter declarations are treated as if they were pointer
+  parameters, the type of an array that's passed to a template function by
+  value is deduced to be a pointer type.
+
+*/
 
 template <typename T>
 void f(T param) {}  // template with by-value parameter

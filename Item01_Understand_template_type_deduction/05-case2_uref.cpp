@@ -1,21 +1,24 @@
 /*
- * Key idea:
- *
- *   Considering the general form for templates and calls to it:
- *
- *     template <typename T>
- *     void f(ParamType param);
- *
- *     f(expr);                // deduce T and ParamType from expr
- *
- *   then, in the case when ParamType is a universal reference
- *   type, type deduction works like this:
- *
- *   * If expr is an lvalue, both T and ParamType are deduced to be lvalue
- *     references
- *   * If expr is an rvalue, the usual type deduction rules apply.
- *
- */
+
+Key idea:
+
+  Considering the general form for templates and calls to it:
+
+  .. code-block:: cpp
+
+     template <typename T>
+     void f(ParamType param);
+
+     f(expr);                // deduce T and ParamType from expr
+
+  then, in the case when ``ParamType`` is a universal reference
+  type, type deduction works like this:
+
+  * If expr is an lvalue, both ``T`` and ``ParamType`` are deduced to be lvalue
+    references
+  * If expr is an rvalue, the usual type deduction rules apply.
+
+*/
 
 template <typename T>
 void f(T&& param) {}  // param is now a universal reference

@@ -1,19 +1,23 @@
 /*
- * Key idea:
- *
- *   Considering the general form for templates and calls to it:
- *
- *     template <typename T>
- *     void f(ParamType param);
- *
- *     f(expr);                // deduce T and ParamType from expr
- *
- *   then, in the simplest case when ParamType is a reference type or a pointer
- *   type, but not a universal reference, type deduction works like this:
- *
- *   1. If expr's type is a reference, ignore the reference part.
- *   2. Then pattern-match expr's type against ParamType to determine T.
- */
+
+Key idea:
+
+  Considering the general form for templates and calls to it:
+
+  .. code-block:: cpp
+
+     template <typename T>
+     void f(ParamType param);
+
+     f(expr);                // deduce T and ParamType from expr
+
+  then, in the simplest case when ``ParamType`` is a reference type or a pointer
+  type, but not a universal reference, type deduction works like this:
+
+  1. If expr's type is a reference, ignore the reference part.
+  2. Then pattern-match expr's type against ``ParamType`` to determine ``T``.
+
+*/
 
 template <typename T>
 void f(T& param) {}  // param is a reference

@@ -1,11 +1,12 @@
 /*
- * Key-idea:
- *
- *   Function types can decay into pointers, too, and everything regarding type
- *   deduction and arrays applies to type deduction for functions and their
- * decay
- *   into function pointers.
- */
+
+Key-idea:
+
+  Function types can decay into pointers, too, and everything regarding type
+  deduction and arrays applies to type deduction for functions and their
+  decay into function pointers.
+
+*/
 
 void someFunc(int, double) {}  // someFunc is a function;
                                // type is void(int, double)

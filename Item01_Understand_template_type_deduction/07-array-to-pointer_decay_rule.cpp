@@ -1,8 +1,9 @@
 /*
- * Key idea:
- *
- *   In many contexts, an array decays into a pointer to its first element.
- *
+
+Key idea:
+
+  In many contexts, an array decays into a pointer to its first element.
+
  */
 
 int main() {
