@@ -1,4 +1,6 @@
 add_library(never_throw_exception never_throw_exception.cpp)
+target_compile_features(never_throw_exception PUBLIC cxx_std_11)
 add_library(example_with_move example_with_move.cpp)
 
 add_executable(inconsistencies inconsistencies.cpp)
+target_compile_features(inconsistencies PUBLIC cxx_std_11)

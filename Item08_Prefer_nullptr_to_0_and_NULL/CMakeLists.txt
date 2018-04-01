@@ -1,7 +1,14 @@
-set_source_files_properties(template_example_templatized_cpp14.cpp PROPERTIES COMPILE_FLAGS -std=c++14)
-
 add_executable(pointer_overload pointer_overload.cpp)
+target_compile_features(pointer_overload PUBLIC cxx_std_11)
+
 add_executable(code_clarity code_clarity.cpp)
+target_compile_features(code_clarity PUBLIC cxx_std_11)
+
 add_executable(template_example_flat template_example_flat.cpp)
+target_compile_features(template_example_flat PUBLIC cxx_std_11)
+
 add_executable(template_example_templatized template_example_templatized.cpp)
+target_compile_features(template_example_templatized PUBLIC cxx_std_11)
+
 add_executable(template_example_templatized_cpp14 template_example_templatized_cpp14.cpp)
+target_compile_features(template_example_templatized_cpp14 PUBLIC cxx_std_14)

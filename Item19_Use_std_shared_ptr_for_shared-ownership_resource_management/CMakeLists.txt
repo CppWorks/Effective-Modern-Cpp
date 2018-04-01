@@ -1,3 +1,7 @@
 add_executable(shared_ptr_things_to_know shared_ptr_things_to_know.cpp)
+target_compile_features(shared_ptr_things_to_know PUBLIC cxx_std_11)
 add_library(multiple_control_blocks1 multiple_control_blocks1.cpp)
+target_compile_features(multiple_control_blocks1 PUBLIC cxx_std_11)
 add_library(multiple_control_blocks2 multiple_control_blocks2.cpp)
+target_compile_features(multiple_control_blocks2 PUBLIC cxx_std_11)
+

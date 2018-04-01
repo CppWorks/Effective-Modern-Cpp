@@ -21,6 +21,7 @@ void processWidget(std::shared_ptr<Widget> spw, int priority) {
 
 int computePriority() {
   std::cout << "Computing priority... done." << std::endl;
+  return 42;
 }
 
 int main() {

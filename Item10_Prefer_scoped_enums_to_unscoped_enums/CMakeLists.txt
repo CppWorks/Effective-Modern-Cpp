@@ -1,5 +1,3 @@
-set_source_files_properties(unscoped_enums_useful04_cpp14.cpp PROPERTIES COMPILE_FLAGS -std=c++14)
-
 add_library(item10 unscoped_enums.cpp
                    scoped_enums.cpp
                    semantic_travesties01.cpp
@@ -14,3 +12,5 @@ add_library(item10 unscoped_enums.cpp
                    unscoped_enums_useful03.cpp
                    unscoped_enums_useful04.cpp
                    unscoped_enums_useful04_cpp14.cpp)
+
+target_compile_features(item10 PUBLIC cxx_std_14)

@@ -1,4 +1,8 @@
 add_executable(logAndAdd_inefficient logAndAdd_inefficient.cpp)
+target_compile_features(logAndAdd_inefficient PUBLIC cxx_std_11)
 add_executable(logAndAdd_with_uref logAndAdd_with_uref.cpp)
+target_compile_features(logAndAdd_with_uref PUBLIC cxx_std_11)
 add_executable(logAndAdd_with_uref_overloaded logAndAdd_with_uref_overloaded.cpp)
+target_compile_features(logAndAdd_with_uref_overloaded PUBLIC cxx_std_11)
 add_executable(Person Person.cpp)
+target_compile_features(Person PUBLIC cxx_std_11)

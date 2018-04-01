@@ -5,3 +5,5 @@ add_library(item09 function_pointers.cpp
                    linked_list_synonym_with_typedef02.cpp
                    # TODO wine.cpp
                    )
+
+target_compile_features(item09 PUBLIC cxx_std_11)

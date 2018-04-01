@@ -1,13 +1,8 @@
-set_source_files_properties(
-    auto_type_deduction.cpp
-    auto_deduction_vs_template_deduction.cpp
-    PROPERTIES COMPILE_FLAGS -std=c++11
-)
-set_source_files_properties(
-    function_return_type_deduction.cpp
-    PROPERTIES COMPILE_FLAGS -std=c++14
-)
-
 add_executable(auto_type_deduction auto_type_deduction.cpp)
+target_compile_features(auto_type_deduction PUBLIC cxx_std_11)
+
 add_executable(auto_deduction_vs_template_deduction auto_deduction_vs_template_deduction.cpp)
+target_compile_features(auto_deduction_vs_template_deduction PUBLIC cxx_std_11)
+
 add_executable(function_return_type_deduction function_return_type_deduction.cpp)
+target_compile_features(function_return_type_deduction PUBLIC cxx_std_14)

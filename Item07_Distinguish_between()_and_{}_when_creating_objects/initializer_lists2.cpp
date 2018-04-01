@@ -36,6 +36,7 @@ class Widget {
 
   operator float() const {  // convert to float
     std::cout << "operator float() const" << std::endl;
+    return 42.0;
   }
 };
 

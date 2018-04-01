@@ -1,28 +1,8 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.0)
 
 # Note: the 'C' seems necessary for CMake 3.2.2 but might not be necessary with
 # later versions of CMake.
 project(Effective_Modern_C++ C CXX)
-
-# Only from gcc 4.9 and cland 3.5 are the options -std=c++11 and -std=c++14 available.
-# See:
-#   https://gcc.gnu.org/projects/cxx-status.html
-#   http://clang.llvm.org/cxx_status.html
-# Since CMAKE_CXX_COMPILER_VERSION is only available from CMake 2.8.10 on, we currently comment
-# this check out.
-#if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-#    if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 4.9)
-#        message(FATAL_ERROR "GCC version must be at least 4.9!")
-#    endif()
-#elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
-#    if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 3.5)
-#        message(FATAL_ERROR "Clang version must be at least 3.5!")
-#    endif()
-#else()
-#    message(WARNING "You are using an unsupported compiler!  Compilation has only been tested with Clang and GCC.")
-#endif()
-
-set(CMAKE_CXX_FLAGS "-std=c++11")
 
 find_package(Threads REQUIRED)
 
@@ -38,7 +18,7 @@ add_subdirectory(Item08_Prefer_nullptr_to_0_and_NULL)
 add_subdirectory(Item10_Prefer_scoped_enums_to_unscoped_enums)
 add_subdirectory(Item11_Prefer_deleted_functions_to_private_undefined_ones)
 add_subdirectory(Item12_Declare_overriding_functions_override)
-# TODO: comment this out when clang supports it: add_subdirectory(Item13_Prefer_const_iterators_to_iterators)
+add_subdirectory(Item13_Prefer_const_iterators_to_iterators)
 add_subdirectory(Item14_Declare_functions_noexcept_if_they_wont_emit_exceptions)
 add_subdirectory(Item15_Use_constexpr_whenever_possible)
 add_subdirectory(Item16_Make_const_member_functions_thread-safe)
@@ -59,7 +39,7 @@ add_subdirectory(Item30_Familiarize_yourself_with_perfect_forwarding_failure_cas
 add_subdirectory(Item31_Avoid_default_capture_modes)
 add_subdirectory(Item32_Use_init_capture_to_move_objects_into_closures)
 add_subdirectory(Item33_Use_decltype_on_autorr_parameters_to_std_forward_them)
-#add_subdirectory(Item34_Prefer_lambdas_to_std_bind)
+# add_subdirectory(Item34_Prefer_lambdas_to_std_bind)
 add_subdirectory(Item35_Prefer_task-based_programming_to_thread-based)
 add_subdirectory(Item36_Specify_std_launch_async_if_asynchronicity_is_essential)
 # add_subdirectory(Item37_Make_std_threads_unjoinable_on_all_paths)

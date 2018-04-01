@@ -1,6 +1,5 @@
-set_source_files_properties(simple_joys.cpp PROPERTIES COMPILE_FLAGS -std=c++11)
-set_source_files_properties(auto.cpp PROPERTIES COMPILE_FLAGS -std=c++14)
-
 add_executable(auto auto.cpp)
+target_compile_features(auto PUBLIC cxx_std_14)
 
 add_library(simple_joys simple_joys.cpp)
+target_compile_features(simple_joys PUBLIC cxx_std_11)

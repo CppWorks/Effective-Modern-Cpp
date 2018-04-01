@@ -1,10 +1,10 @@
-add_executable(braced_initializers
-               braced_initializers.cpp)
-add_executable(null_pointers
-               null_pointers.cpp)
-add_executable(declaration-only_integral_static_const_data_members
-               declaration-only_integral_static_const_data_members.cpp)
-add_executable(overloaded_function_names_and_template_names
-               overloaded_function_names_and_template_names.cpp)
-add_executable(bitfields
-               bitfields.cpp)
+add_executable(braced_initializers braced_initializers.cpp)
+target_compile_features(braced_initializers PUBLIC cxx_std_11)
+add_executable(null_pointers null_pointers.cpp)
+target_compile_features(null_pointers PUBLIC cxx_std_11)
+add_executable(declaration-only_integral_static_const_data_members declaration-only_integral_static_const_data_members.cpp)
+target_compile_features(declaration-only_integral_static_const_data_members PUBLIC cxx_std_11)
+add_executable(overloaded_function_names_and_template_names overloaded_function_names_and_template_names.cpp)
+target_compile_features(overloaded_function_names_and_template_names PUBLIC cxx_std_11)
+add_executable(bitfields bitfields.cpp)
+target_compile_features(bitfields PUBLIC cxx_std_11)

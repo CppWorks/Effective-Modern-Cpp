@@ -1,11 +1,5 @@
-set_source_files_properties(
-    investments_cpp11.cpp
-    PROPERTIES COMPILE_FLAGS -std=c++11
-)
-set_source_files_properties(
-    investments_cpp14.cpp
-    PROPERTIES COMPILE_FLAGS -std=c++14
-)
-
 add_executable(investments_cpp11 investments_cpp11.cpp)
+target_compile_features(investments_cpp11 PUBLIC cxx_std_11)
+
 add_executable(investments_cpp14 investments_cpp14.cpp)
+target_compile_features(investments_cpp14 PUBLIC cxx_std_14)

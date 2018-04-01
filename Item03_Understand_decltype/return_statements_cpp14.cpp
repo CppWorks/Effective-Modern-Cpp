@@ -8,11 +8,16 @@
 decltype(auto) f1() {
   int x = 0;
   // ...
-  return x;  // decltype(x) is int, so f1 returns int
+
+  // decltype(x) is int, so f1 returns int
+  return x;
 }
 
 decltype(auto) f2() {
   int x = 0;
   // ...
-  return (x);  // decltype((x)) is int&, so f2 returns int&
+
+  // decltype((x)) is int&, so f2 returns int&
+  // Warning: reference to stack memory associated with local variable 'x' returned [-Wreturn-stack-address]
+  return (x);
 }

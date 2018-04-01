@@ -1,3 +1,5 @@
 add_executable(invisible_proxy_types invisible_proxy_types.cpp)
+target_compile_features(invisible_proxy_types PUBLIC cxx_std_11)
 #add_executable(matrix_example matrix_example.cpp)
 add_executable(explicitly_typed_initializer_idiom explicitly_typed_initializer_idiom.cpp)
+target_compile_features(explicitly_typed_initializer_idiom PUBLIC cxx_std_11)

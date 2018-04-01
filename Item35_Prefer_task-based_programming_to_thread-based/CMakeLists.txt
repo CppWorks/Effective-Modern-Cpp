@@ -1,7 +1,9 @@
 add_executable(software_threads software_threads.cpp)
 add_executable(task_based_approach task_based_approach.cpp)
 add_executable(thread_based_approach thread_based_approach.cpp)
-
+target_compile_features(thread_based_approach PUBLIC cxx_std_11)
 target_link_libraries(software_threads ${CMAKE_THREAD_LIBS_INIT})
+target_compile_features(software_threads PUBLIC cxx_std_11)
 target_link_libraries(task_based_approach ${CMAKE_THREAD_LIBS_INIT})
+target_compile_features(task_based_approach PUBLIC cxx_std_11)
 target_link_libraries(thread_based_approach ${CMAKE_THREAD_LIBS_INIT})

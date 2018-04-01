@@ -16,11 +16,17 @@ class Widget {};
 
 int f1(std::shared_ptr<Widget> sp) {
   std::cout << "f1" << std::endl;
+  return 42;
 }  // call these only when
 double f2(std::unique_ptr<Widget> up) {
   std::cout << "f2" << std::endl;
+  return 42.0;
 }  // the appropriate
-bool f3(void* ptr) { std::cout << "f3" << std::endl; }  // mutex is locked
+
+bool f3(void* ptr) {
+  std::cout << "f3" << std::endl; // mutex is locked
+  return true;
+}
 
 template <typename FuncType, typename MuxType,
           typename PtrType>
