@@ -1,33 +1,33 @@
-add_executable(pinch_of_pseudocode pinch_of_pseudocode.cpp)
-target_compile_features(pinch_of_pseudocode PUBLIC cxx_std_11)
+add_executable(01-pinch_of_pseudocode 01-pinch_of_pseudocode.cpp)
+target_compile_features(01-pinch_of_pseudocode PUBLIC cxx_std_11)
 
-add_executable(case1_const case1_const.cpp)
-target_compile_features(case1_const PUBLIC cxx_std_11)
+add_executable(02-case1_const 02-case1_const.cpp)
+target_compile_features(02-case1_const PUBLIC cxx_std_11)
 
-add_executable(case1_non_const case1_non_const.cpp)
-target_compile_features(case1_non_const PUBLIC cxx_std_11)
+add_executable(03-case1_non_const 03-case1_non_const.cpp)
+target_compile_features(03-case1_non_const PUBLIC cxx_std_11)
 
-add_executable(case1_pointer case1_pointer.cpp)
-target_compile_features(case1_pointer PUBLIC cxx_std_11)
+add_executable(04-case1_pointer 04-case1_pointer.cpp)
+target_compile_features(04-case1_pointer PUBLIC cxx_std_11)
 
-add_executable(case2_uref case2_uref.cpp)
-target_compile_features(case2_uref PUBLIC cxx_std_11)
+add_executable(05-case2_uref 05-case2_uref.cpp)
+target_compile_features(05-case2_uref PUBLIC cxx_std_11)
 
-add_executable(case3_pass_by_value case3_pass_by_value.cpp)
-target_compile_features(case3_pass_by_value PUBLIC cxx_std_11)
+add_executable(06-case3_pass_by_value 06-case3_pass_by_value.cpp)
+target_compile_features(06-case3_pass_by_value PUBLIC cxx_std_11)
 
-add_executable(array-to-pointer_decay_rule array-to-pointer_decay_rule.cpp)
-target_compile_features(array-to-pointer_decay_rule PUBLIC cxx_std_11)
+add_executable(07-array-to-pointer_decay_rule 07-array-to-pointer_decay_rule.cpp)
+target_compile_features(07-array-to-pointer_decay_rule PUBLIC cxx_std_11)
 
-add_executable(arrays_by_value arrays_by_value.cpp)
-target_compile_features(arrays_by_value PUBLIC cxx_std_11)
+add_executable(08-arrays_by_value 08-arrays_by_value.cpp)
+target_compile_features(08-arrays_by_value PUBLIC cxx_std_11)
 
-add_executable(arrays_by_reference arrays_by_reference.cpp)
-target_compile_features(arrays_by_reference PUBLIC cxx_std_11)
+add_executable(09-arrays_by_reference 09-arrays_by_reference.cpp)
+target_compile_features(09-arrays_by_reference PUBLIC cxx_std_11)
 
-add_executable(function-to-pointer_decay_rule function-to-pointer_decay_rule.cpp)
-target_compile_features(function-to-pointer_decay_rule PUBLIC cxx_std_11)
+add_executable(10-function-to-pointer_decay_rule 10-function-to-pointer_decay_rule.cpp)
+target_compile_features(10-function-to-pointer_decay_rule PUBLIC cxx_std_11)
 
-add_library(item01 deduce_nb_array_elements.cpp
-                   array_and_pointer_parameter_equivalence.cpp)
+add_library(item01 11-deduce_nb_array_elements.cpp
+                   12-array_and_pointer_parameter_equivalence.cpp)
 target_compile_features(item01 PUBLIC cxx_std_11)

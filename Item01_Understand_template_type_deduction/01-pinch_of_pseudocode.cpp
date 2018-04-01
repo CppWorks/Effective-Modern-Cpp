@@ -8,7 +8,7 @@
  *
  *   then two types are deduced: one for T and one for ParamType.  These types
  *   are frequently different, because ParamType often contains adornments,
- *   e.g., const- or reference qualifiers.
+ *   e.g., const or reference qualifiers.
  */
 
 template <typename T>
