@@ -25,9 +25,9 @@ target_compile_features(08-arrays_by_value PUBLIC cxx_std_11)
 add_executable(09-arrays_by_reference 09-arrays_by_reference.cpp)
 target_compile_features(09-arrays_by_reference PUBLIC cxx_std_11)
 
-add_executable(10-function-to-pointer_decay_rule 10-function-to-pointer_decay_rule.cpp)
-target_compile_features(10-function-to-pointer_decay_rule PUBLIC cxx_std_11)
+add_executable(11-function-to-pointer_decay_rule 11-function-to-pointer_decay_rule.cpp)
+target_compile_features(11-function-to-pointer_decay_rule PUBLIC cxx_std_11)
 
-add_library(item01 11-deduce_nb_array_elements.cpp
+add_library(item01 10-deduce_nb_array_elements.cpp
                    12-array_and_pointer_parameter_equivalence.cpp)
 target_compile_features(item01 PUBLIC cxx_std_11)

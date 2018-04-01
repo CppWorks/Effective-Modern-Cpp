@@ -95,25 +95,26 @@ Array Arguments
    :caption: 09-arrays_by_reference.cpp
    :start-after: */
 
+.. include:: ../Item01_Understand_template_type_deduction/10-deduce_nb_array_elements.cpp
+   :start-after: /*
+   :end-before: */
+
+.. literalinclude:: ../Item01_Understand_template_type_deduction/10-deduce_nb_array_elements.cpp
+   :language: cpp
+   :caption: 11-deduce_nb_array_elements.cpp
+   :start-after: */
+
+
 Function Arguments
 ^^^^^^^^^^^^^^^^^^
 
-.. include:: ../Item01_Understand_template_type_deduction/10-function-to-pointer_decay_rule.cpp
+.. include:: ../Item01_Understand_template_type_deduction/11-function-to-pointer_decay_rule.cpp
    :start-after: /*
    :end-before: */
 
-.. literalinclude:: ../Item01_Understand_template_type_deduction/10-function-to-pointer_decay_rule.cpp
+.. literalinclude:: ../Item01_Understand_template_type_deduction/11-function-to-pointer_decay_rule.cpp
    :language: cpp
    :caption: 10-function-to-pointer_decay_rule.cpp
-   :start-after: */
-
-.. include:: ../Item01_Understand_template_type_deduction/11-deduce_nb_array_elements.cpp
-   :start-after: /*
-   :end-before: */
-
-.. literalinclude:: ../Item01_Understand_template_type_deduction/11-deduce_nb_array_elements.cpp
-   :language: cpp
-   :caption: 11-deduce_nb_array_elements.cpp
    :start-after: */
 
 .. include:: ../Item01_Understand_template_type_deduction/12-array_and_pointer_parameter_equivalence.cpp
