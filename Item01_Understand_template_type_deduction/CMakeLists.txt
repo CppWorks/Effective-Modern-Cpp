@@ -1,11 +1,11 @@
 add_executable(01-pinch_of_pseudocode 01-pinch_of_pseudocode.cpp)
 target_compile_features(01-pinch_of_pseudocode PUBLIC cxx_std_11)
 
-add_executable(02-case1_const 02-case1_const.cpp)
-target_compile_features(02-case1_const PUBLIC cxx_std_11)
+add_executable(02-case1_non_const 02-case1_non_const.cpp)
+target_compile_features(02-case1_non_const PUBLIC cxx_std_11)
 
-add_executable(03-case1_non_const 03-case1_non_const.cpp)
-target_compile_features(03-case1_non_const PUBLIC cxx_std_11)
+add_executable(03-case1_const 03-case1_const.cpp)
+target_compile_features(03-case1_const PUBLIC cxx_std_11)
 
 add_executable(04-case1_pointer 04-case1_pointer.cpp)
 target_compile_features(04-case1_pointer PUBLIC cxx_std_11)

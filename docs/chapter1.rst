@@ -14,22 +14,22 @@ Item 1: Understand template type deduction
 
 Case 1: ParamType is a Reference or Pointer, but not a Universal Reference
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. include:: ../Item01_Understand_template_type_deduction/02-case1_const.cpp
+.. include:: ../Item01_Understand_template_type_deduction/02-case1_non_const.cpp
    :start-after: /*
    :end-before: */
 
-.. literalinclude:: ../Item01_Understand_template_type_deduction/02-case1_const.cpp
+.. literalinclude:: ../Item01_Understand_template_type_deduction/02-case1_non_const.cpp
    :language: cpp
-   :caption: 02-case1_const.cpp
+   :caption: 02-case1_non_const.cpp
    :start-after: */
 
-.. include:: ../Item01_Understand_template_type_deduction/03-case1_non_const.cpp
+.. include:: ../Item01_Understand_template_type_deduction/03-case1_const.cpp
    :start-after: /*
    :end-before: */
 
-.. literalinclude:: ../Item01_Understand_template_type_deduction/03-case1_non_const.cpp
+.. literalinclude:: ../Item01_Understand_template_type_deduction/03-case1_const.cpp
    :language: cpp
-   :caption: 03-case1_non_const.cpp
+   :caption: 03-case1_const.cpp
    :start-after: */
 
 .. include:: ../Item01_Understand_template_type_deduction/04-case1_pointer.cpp
