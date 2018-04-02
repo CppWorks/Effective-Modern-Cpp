@@ -1,9 +1,11 @@
 /*
- * Key idea:
- *
- *   The treatment of braced initializers is the only way in which auto type
- *   deduction and template type deduction differ.
- */
+
+Key idea:
+
+  The treatment of braced initializers is the only way in which auto type
+  deduction and template type deduction differ.
+
+*/
 
 #include <initializer_list>
 
@@ -29,17 +31,17 @@ int main() {
                      // value is {27}
     auto x4{27};     // ditto
 
-    // auto x5 = {1, 2, 3.0};  // error! can't deduce T for
-    //                        // std::initializer_list<T>
+    // Error! Can't deduce T for std::initializer_list<T>
+    // auto x5 = {1, 2, 3.0};
   }
 
   {
-    auto x = {11, 23, 9};  // x's type is
-                           // std::initializer_list<int>
+    // x's type is std::initializer_list<int>
+    auto x = {11, 23, 9};
 
-    // f({ 11, 23, 9 });        // error! can't deduce type for T
+    // Error! Can't deduce type for T
+    // f({ 11, 23, 9 });
 
-    f2({11, 23, 9});  // T deduced as int, and initList's
-                      // type is std::initializer_list<int>
+    f2({11, 23, 9});  // T deduced as int, and initList's type is std::initializer_list<int>
   }
 }
