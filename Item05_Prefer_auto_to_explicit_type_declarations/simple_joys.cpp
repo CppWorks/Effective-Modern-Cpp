@@ -30,7 +30,6 @@ void dwim(It b, It e)   // for all elements in range from
 
 // Perhaps you're thinking that we don't really need auto to declare a variable
 // that holds a closure, because we use a std::function object:
-std::function<bool(const std::unique_ptr<Widget>&,
-                   const std::unique_ptr<Widget>&)>
+std::function<bool(const std::unique_ptr<Widget>&, const std::unique_ptr<Widget>&)>
     derefUPLess = [](const std::unique_ptr<Widget>& p1,
                      const std::unique_ptr<Widget>& p2) { return *p1 < *p2; };

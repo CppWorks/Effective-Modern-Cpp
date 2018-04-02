@@ -24,7 +24,7 @@ double f2(std::unique_ptr<Widget> up) {
 }  // the appropriate
 
 bool f3(void* ptr) {
-  std::cout << "f3" << std::endl; // mutex is locked
+  std::cout << "f3" << std::endl;  // mutex is locked
   return true;
 }
 

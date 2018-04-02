@@ -17,7 +17,7 @@ class SomeDataStructure {};
 
 class Widget {
  public:
-  Widget(Widget&& rhs)  // rhs is rvalue reference
+  Widget(Widget&& rhs)                                   // rhs is rvalue reference
       : name(std::move(rhs.name)), p(std::move(rhs.p)) { /* ... */
   }
 

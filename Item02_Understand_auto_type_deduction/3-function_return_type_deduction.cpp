@@ -14,7 +14,7 @@ Key ideas:
 
 auto createInitList() {
   // return {1, 2, 3};    // error: can't deduce type
-                          // for {1, 2, 3}
+  // for {1, 2, 3}
 }
 
 int main() {

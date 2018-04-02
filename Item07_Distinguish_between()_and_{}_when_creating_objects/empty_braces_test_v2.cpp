@@ -38,9 +38,7 @@ class X {
  public:
   X() { std::cout << "Def Ctor\n"; }
 
-  X(std::initializer_list<T> il) {
-    std::cout << "il.size() = " << il.size() << '\n';
-  }
+  X(std::initializer_list<T> il) { std::cout << "il.size() = " << il.size() << '\n'; }
 };
 
 int main() {

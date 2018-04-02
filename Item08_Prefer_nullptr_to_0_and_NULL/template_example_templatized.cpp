@@ -31,8 +31,7 @@ bool f3(void* ptr) {
 }  // mutex is locked
 
 template <typename FuncType, typename MuxType, typename PtrType>
-auto lockAndCall(FuncType func, MuxType& mutex, PtrType ptr)
-    -> decltype(func(ptr)) {
+auto lockAndCall(FuncType func, MuxType& mutex, PtrType ptr) -> decltype(func(ptr)) {
   MuxGuard g(mutex);
   return func(ptr);
 }

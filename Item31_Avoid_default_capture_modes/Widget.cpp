@@ -19,9 +19,8 @@ void Widget::addFilter() const {
      this: */
   auto currentObjectPtr = this;
 
-  filters.emplace_back([currentObjectPtr](int value) {
-    return value % currentObjectPtr->divisor == 0;
-  });
+  filters.emplace_back(
+      [currentObjectPtr](int value) { return value % currentObjectPtr->divisor == 0; });
   /* version 1 end */
 
   /* version 2: make a local copy of the data member you want to capture */

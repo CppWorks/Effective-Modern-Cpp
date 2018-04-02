@@ -24,9 +24,7 @@ void processWidget(std::shared_ptr<Widget> spw, int priority) {
   std::cout << "Processing Widget... done." << std::endl;
 }
 
-int computePriority() {
-  std::cout << "Computing priority... done." << std::endl;
-}
+int computePriority() { std::cout << "Computing priority... done." << std::endl; }
 
 void cusDel(Widget* ptr)  // custom
 {                         // deleter
@@ -39,8 +37,7 @@ int main() {
 
   auto widgetDeleter = [](Widget* pw) { /* ... */ };
 
-  std::unique_ptr<Widget, decltype(widgetDeleter)> upw(new Widget(),
-                                                       widgetDeleter);
+  std::unique_ptr<Widget, decltype(widgetDeleter)> upw(new Widget(), widgetDeleter);
 
   std::shared_ptr<Widget> spw(new Widget(), widgetDeleter);
 

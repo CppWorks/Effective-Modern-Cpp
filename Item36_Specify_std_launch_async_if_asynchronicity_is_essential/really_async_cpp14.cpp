@@ -11,8 +11,7 @@
 template <typename F, typename... Ts>
 inline auto  // C++14
     reallyAsync(F&& f, Ts&&... params) {
-  return std::async(std::launch::async, std::forward<F>(f),
-                    std::forward<Ts>(params)...);
+  return std::async(std::launch::async, std::forward<F>(f), std::forward<Ts>(params)...);
 }
 
 void f() { std::cout << "f()" << std::endl; }

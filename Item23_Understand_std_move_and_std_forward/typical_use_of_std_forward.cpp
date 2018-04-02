@@ -4,9 +4,7 @@
 
 void process(Widget& lvalArg) { std::cout << "process(Widget&)" << std::endl; }
 
-void process(Widget&& rvalArg) {
-  std::cout << "process(Widget&&)" << std::endl;
-}
+void process(Widget&& rvalArg) { std::cout << "process(Widget&&)" << std::endl; }
 
 int main() {
   Widget w;

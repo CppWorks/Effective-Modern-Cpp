@@ -20,9 +20,7 @@ class Widget {
   ~Widget() { std::cout << "~Widget(" << this << ")" << std::endl; }
 };
 
-void makeLogentry(Widget *pw) {
-  std::cout << "Log entry for " << pw << "." << std::endl;
-}
+void makeLogentry(Widget *pw) { std::cout << "Log entry for " << pw << "." << std::endl; }
 
 auto loggingDel = [](Widget *pw)  // custom deleter
 {                                 // (as in Item 19)
@@ -61,8 +59,7 @@ int main() {
    * affect the type of the std::unique_ptr.
    */
 
-  std::cout << "Part 2: std::shared_ptr design being more flexible"
-            << std::endl;
+  std::cout << "Part 2: std::shared_ptr design being more flexible" << std::endl;
 
   auto customDeleter1 = [](Widget *pw) {
     makeLogentry(pw);

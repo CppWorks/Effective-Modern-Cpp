@@ -47,10 +47,9 @@ void addDivisorFilter2() {
   static auto divisor =  // now static
       computeDivisor(calc1, calc2);
 
-  filters.emplace_back(
-      [=](int value)                    // captures nothing!
-      { return value % divisor == 0; }  // refers to above static
-      );
+  filters.emplace_back([=](int value)                    // captures nothing!
+                       { return value % divisor == 0; }  // refers to above static
+                       );
 
   ++divisor;  // modify divisor
 }

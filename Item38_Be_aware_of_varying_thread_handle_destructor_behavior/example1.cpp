@@ -9,7 +9,7 @@ std::vector<std::future<void>> futs;  // see Item 39 for info
 
 class Widget {  // Widget objects *might*
  public:        // block in their dtors
-  // ...
+                // ...
 
  private:
   std::shared_future<double> fut;

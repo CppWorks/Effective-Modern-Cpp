@@ -21,8 +21,7 @@ void f(const T& param) {
   cout << "T =     " << type_id_with_cvr<T>().pretty_name() << '\n';
 
   // show param's type
-  cout << "param = " << type_id_with_cvr<decltype(param)>().pretty_name()
-       << '\n';
+  cout << "param = " << type_id_with_cvr<decltype(param)>().pretty_name() << '\n';
 }
 
 std::vector<Widget> createVec()  // factory function

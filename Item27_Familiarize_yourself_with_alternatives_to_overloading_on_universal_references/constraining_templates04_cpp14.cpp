@@ -16,9 +16,8 @@ class Person {
  public:
   template <  // as before
       typename T,
-      typename = std::enable_if_t<
-          !std::is_base_of<Person, std::decay_t<T>>::value &&
-          !std::is_integral<std::remove_reference_t<T>>::value>>
+      typename = std::enable_if_t<!std::is_base_of<Person, std::decay_t<T>>::value &&
+                                  !std::is_integral<std::remove_reference_t<T>>::value>>
   explicit Person(T&& n) : name(std::forward<T>(n)) {
     // assert that a std::string can be created from a T object
     static_assert(std::is_constructible<std::string, T>::value,

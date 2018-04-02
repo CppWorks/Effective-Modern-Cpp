@@ -14,10 +14,10 @@ std::string nameFromIdx(int idx)  // as in Item 26
 
 class Person {
  public:
-  template <typename T,
-            typename = std::enable_if_t<
-                !std::is_base_of<Person, std::decay_t<T>>::value &&
-                !std::is_integral<std::remove_reference_t<T>>::value>>
+  template <
+      typename T,
+      typename = std::enable_if_t<!std::is_base_of<Person, std::decay_t<T>>::value &&
+                                  !std::is_integral<std::remove_reference_t<T>>::value>>
   explicit Person(T&& n)          // ctor for std::strings and
       : name(std::forward<T>(n))  // args convertible to
   {                               /* ... */

@@ -10,11 +10,11 @@
 
 class Widget {
  public:
-  void doWork() & {  // this version of doWork applies only
+  void doWork() & {                          // this version of doWork applies only
     std::cout << "doWork() &" << std::endl;  // when *this is an lvalue
   }
 
-  void doWork() && {  // this version of doWork applies only
+  void doWork() && {                          // this version of doWork applies only
     std::cout << "doWork() &&" << std::endl;  // when *this is an rvalue
   }
 };

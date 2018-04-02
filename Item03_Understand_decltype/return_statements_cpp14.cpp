@@ -18,6 +18,7 @@ decltype(auto) f2() {
   // ...
 
   // decltype((x)) is int&, so f2 returns int&
-  // Warning: reference to stack memory associated with local variable 'x' returned [-Wreturn-stack-address]
+  // Warning: reference to stack memory associated with local variable 'x' returned
+  // [-Wreturn-stack-address]
   return (x);
 }

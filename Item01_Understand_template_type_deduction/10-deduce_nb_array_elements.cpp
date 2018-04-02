@@ -14,8 +14,7 @@ Key idea:
 // array parameter has no name, because we care only about
 // the number of elements it contains.)
 template <typename T, std::size_t N>
-constexpr std::size_t arraySize(T (&)[N]) noexcept
-{
+constexpr std::size_t arraySize(T (&)[N]) noexcept {
   return N;
 }
 
