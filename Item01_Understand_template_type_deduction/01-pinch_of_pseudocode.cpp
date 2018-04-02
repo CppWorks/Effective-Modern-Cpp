@@ -10,7 +10,7 @@ Key idea:
      void f(ParamType param);
 
   then two types are deduced: one for ``T`` and one for ``ParamType``.  These types
-  are often different, because ``ParamType`` can contains adornments,
+  are often different, because ``ParamType`` can contain adornments,
   e.g. const or reference qualifiers.
 
 */
