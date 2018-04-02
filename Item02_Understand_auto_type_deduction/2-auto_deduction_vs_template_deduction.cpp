@@ -42,7 +42,7 @@ int main() {
     // Error! Can't deduce type for T
     // f({ 11, 23, 9 });
 
-    f2({11, 23,
-        9});  // T deduced as int, and initList's type is std::initializer_list<int>
+    // T deduced as int, and initList's type is std::initializer_list<int>
+    f2({11, 23, 9});
   }
 }
